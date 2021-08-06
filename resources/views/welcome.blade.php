@@ -88,8 +88,8 @@
                 </button>
                 <a class="navbar-brand" href="{{route('login')}}">
 
-                    <img src="{{asset('assets/images/logo.png')}}" class="logo logo-display m-top-10" alt="">
-                    <img src="{{asset('assets/images/logo.jpg')}}" class="logo logo-scrolled" alt="">
+                    <img src="{{asset('assets/images/logo.png')}}" class="logo logo-display m-top-10 brand-image img-circle elevation-3" style="opacity: .8;/* height: 129%; */width: 11%;" alt="">
+                    <img src="{{asset('assets/images/logo.png')}}" class="logo logo-scrolled brand-image img-circle elevation-3" style="opacity: .8;/* height: 129%; */width: 11%;" alt="">
 
                 </a>
             </div>
