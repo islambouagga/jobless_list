@@ -7,6 +7,22 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
+import Candidate from "./components/Candidate";
+
+let routes = [
+    { path: '/Candidate', component: Candidate },
+]
+
+const router = new VueRouter({
+    mode: 'history',
+    routes // short for `routes: routes`
+})
+
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -28,5 +44,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 const app = new Vue({
+    router,
     el: '#app',
 });

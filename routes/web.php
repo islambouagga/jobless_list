@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +22,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
-Route::resource('form', FormController::class);
+Route::resource('candidate', CandidateController::class);
+
+Route::get('/{path}',[HomeController::class, 'index'] )->where('path','.*');
