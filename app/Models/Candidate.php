@@ -28,5 +28,8 @@ class Candidate extends Model
         'field',
         'Study_level',
         'Certificate',
+        'wassit',
+        'Anem',
+        'statu',
     ];
 }

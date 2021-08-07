@@ -25,6 +25,8 @@ class CreateCandidatesTable extends Migration
             $table->integer('commune');
             $table->string('Electricity_bill');
             $table->string('field');
+            $table->string('Anem');
+            $table->bigInteger('wassit');
             $table->string('Study_level');
             $table->string('Certificate');
             $table->timestamps();

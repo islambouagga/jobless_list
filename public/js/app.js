@@ -1932,20 +1932,166 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      candidates: {}
+      candidates: {},
+      communetest: {},
+      candidate: new Form({
+        id: '',
+        name: '',
+        email: '',
+        phone: '',
+        birthday: '',
+        birthplace: '',
+        residence: '',
+        verification_card: '',
+        commune: '',
+        Electricity_bill: '',
+        field: '',
+        Study_level: '',
+        Certificate: '',
+        wassit: '',
+        Anem: ''
+      })
     };
   },
   methods: {
-    loadCandidates: function loadCandidates() {
+    showModal: function showModal(candidate) {
       var _this = this;
 
-      axios.get('api/candidate').then(function (_ref) {
+      $('#infotClt').modal('show');
+      console.log(candidate.commune);
+      this.candidate.fill(candidate);
+      axios.get('api/communes/' + candidate.commune).then(function (_ref) {
         var data = _ref.data;
-        return _this.candidates = data;
+        return _this.communetest = data;
       });
+    },
+    loadCandidates: function loadCandidates() {
+      var _this2 = this;
+
+      axios.get('api/candidate').then(function (_ref2) {
+        var data = _ref2.data;
+        return _this2.candidates = data;
+      });
+    },
+    verification_card: function verification_card(candidate) {
+      var photo = "files/" + candidate.name + "/" + candidate.verification_card;
+      return photo;
+    },
+    Electricity_bill: function Electricity_bill(candidate) {
+      var photo = "files/" + candidate.name + "/" + candidate.Electricity_bill;
+      return photo;
+    },
+    Certificate: function Certificate(candidate) {
+      var photo = "files/" + candidate.name + "/" + candidate.Certificate;
+      return photo;
     }
   },
   created: function created() {
@@ -2001,8 +2147,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _components_Candidate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Candidate */ "./resources/js/components/Candidate.vue");
+/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.es.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _components_Candidate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Candidate */ "./resources/js/components/Candidate.vue");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -2012,13 +2159,15 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
 
-Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__.default);
+window.Form = vform__WEBPACK_IMPORTED_MODULE_0__.default;
+
+Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_1__.default);
 
 var routes = [{
   path: '/Candidate',
-  component: _components_Candidate__WEBPACK_IMPORTED_MODULE_1__.default
+  component: _components_Candidate__WEBPACK_IMPORTED_MODULE_2__.default
 }];
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__.default({
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__.default({
   mode: 'history',
   routes: routes // short for `routes: routes`
 
@@ -37476,6 +37625,26 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/vform/dist/vform.es.js":
+/*!*********************************************!*\
+  !*** ./node_modules/vform/dist/vform.es.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "Errors": () => (/* binding */ y),
+/* harmony export */   "Form": () => (/* binding */ g)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,s=Object.getOwnPropertySymbols,r=Object.prototype.propertyIsEnumerable,o=(t,s,r)=>s in t?e(t,s,{enumerable:!0,configurable:!0,writable:!0,value:r}):t[s]=r,i=(e,i)=>{for(var a in i||(i={}))t.call(i,a)&&o(e,a,i[a]);if(s)for(var a of s(i))r.call(i,a)&&o(e,a,i[a]);return e};const n=e=>void 0===e,c=e=>Array.isArray(e),l=e=>e&&"number"==typeof e.size&&"string"==typeof e.type&&"function"==typeof e.slice,u=(e,t,s,r)=>((t=t||{}).indices=!n(t.indices)&&t.indices,t.nullsAsUndefineds=!n(t.nullsAsUndefineds)&&t.nullsAsUndefineds,t.booleansAsIntegers=!n(t.booleansAsIntegers)&&t.booleansAsIntegers,t.allowEmptyArrays=!n(t.allowEmptyArrays)&&t.allowEmptyArrays,s=s||new FormData,n(e)||(null===e?t.nullsAsUndefineds||s.append(r,""):(e=>"boolean"==typeof e)(e)?t.booleansAsIntegers?s.append(r,e?1:0):s.append(r,e):c(e)?e.length?e.forEach(((e,o)=>{const i=r+"["+(t.indices?o:"")+"]";u(e,t,s,i)})):t.allowEmptyArrays&&s.append(r+"[]",""):(e=>e instanceof Date)(e)?s.append(r,e.toISOString()):!(e=>e===Object(e))(e)||(e=>l(e)&&"string"==typeof e.name&&("object"==typeof e.lastModifiedDate||"number"==typeof e.lastModified))(e)||l(e)?s.append(r,e):Object.keys(e).forEach((o=>{const i=e[o];if(c(i))for(;o.length>2&&o.lastIndexOf("[]")===o.length-2;)o=o.substring(0,o.length-2);u(i,t,s,r?r+"["+o+"]":o)}))),s);var h={serialize:u};function d(e){if(null===e||"object"!=typeof e)return e;const t=Array.isArray(e)?[]:{};return Object.keys(e).forEach((s=>{t[s]=d(e[s])})),t}function f(e){return Array.isArray(e)?e:[e]}function p(e){return e instanceof File||e instanceof Blob||e instanceof FileList||"object"==typeof e&&null!==e&&void 0!==Object.values(e).find((e=>p(e)))}class y{constructor(){this.errors={},this.errors={}}set(e,t){"object"==typeof e?this.errors=e:this.set(i(i({},this.errors),{[e]:f(t)}))}all(){return this.errors}has(e){return Object.prototype.hasOwnProperty.call(this.errors,e)}hasAny(...e){return e.some((e=>this.has(e)))}any(){return Object.keys(this.errors).length>0}get(e){if(this.has(e))return this.getAll(e)[0]}getAll(e){return f(this.errors[e]||[])}only(...e){const t=[];return e.forEach((e=>{const s=this.get(e);s&&t.push(s)})),t}flatten(){return Object.values(this.errors).reduce(((e,t)=>e.concat(t)),[])}clear(e){const t={};e&&Object.keys(this.errors).forEach((s=>{s!==e&&(t[s]=this.errors[s])})),this.set(t)}}class g{constructor(e={}){this.originalData={},this.busy=!1,this.successful=!1,this.recentlySuccessful=!1,this.recentlySuccessfulTimeoutId=void 0,this.errors=new y,this.progress=void 0,this.update(e)}static make(e){return new this(e)}update(e){this.originalData=Object.assign({},this.originalData,d(e)),Object.assign(this,e)}fill(e={}){this.keys().forEach((t=>{this[t]=e[t]}))}data(){return this.keys().reduce(((e,t)=>i(i({},e),{[t]:this[t]})),{})}keys(){return Object.keys(this).filter((e=>!g.ignore.includes(e)))}startProcessing(){this.errors.clear(),this.busy=!0,this.successful=!1,this.progress=void 0,this.recentlySuccessful=!1,clearTimeout(this.recentlySuccessfulTimeoutId)}finishProcessing(){this.busy=!1,this.successful=!0,this.progress=void 0,this.recentlySuccessful=!0,this.recentlySuccessfulTimeoutId=setTimeout((()=>{this.recentlySuccessful=!1}),g.recentlySuccessfulTimeout)}clear(){this.errors.clear(),this.successful=!1,this.recentlySuccessful=!1,this.progress=void 0,clearTimeout(this.recentlySuccessfulTimeoutId)}reset(){Object.keys(this).filter((e=>!g.ignore.includes(e))).forEach((e=>{this[e]=d(this.originalData[e])}))}get(e,t={}){return this.submit("get",e,t)}post(e,t={}){return this.submit("post",e,t)}patch(e,t={}){return this.submit("patch",e,t)}put(e,t={}){return this.submit("put",e,t)}delete(e,t={}){return this.submit("delete",e,t)}submit(e,t,s={}){return this.startProcessing(),s=i({data:{},params:{},url:this.route(t),method:e,onUploadProgress:this.handleUploadProgress.bind(this)},s),"get"===e.toLowerCase()?s.params=i(i({},this.data()),s.params):(s.data=i(i({},this.data()),s.data),p(s.data)&&(s.transformRequest=[e=>h.serialize(e)])),new Promise(((e,t)=>{(g.axios||(axios__WEBPACK_IMPORTED_MODULE_0___default())).request(s).then((t=>{this.finishProcessing(),e(t)})).catch((e=>{this.handleErrors(e),t(e)}))}))}handleErrors(e){this.busy=!1,this.progress=void 0,e.response&&this.errors.set(this.extractErrors(e.response))}extractErrors(e){return e.data&&"object"==typeof e.data?e.data.errors?i({},e.data.errors):e.data.message?{error:e.data.message}:i({},e.data):{error:g.errorMessage}}handleUploadProgress(e){this.progress={total:e.total,loaded:e.loaded,percentage:Math.round(100*e.loaded/e.total)}}route(e,t={}){let s=e;return Object.prototype.hasOwnProperty.call(g.routes,e)&&(s=decodeURI(g.routes[e])),"object"!=typeof t&&(t={id:t}),Object.keys(t).forEach((e=>{s=s.replace(`{${e}}`,t[e])})),s}onKeydown(e){const t=e.target;t.name&&this.errors.clear(t.name)}}g.routes={},g.errorMessage="Something went wrong. Please try again.",g.recentlySuccessfulTimeout=2e3,g.ignore=["busy","successful","errors","progress","originalData","recentlySuccessful","recentlySuccessfulTimeoutId"];/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (g);
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Candidate.vue":
 /*!***********************************************!*\
   !*** ./resources/js/components/Candidate.vue ***!
@@ -37641,12 +37810,10 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "row " }, [
       _c("div", { staticClass: "col-12" }, [
-        _c("div", { staticClass: "card" }, [
-          _vm._m(1),
-          _vm._v(" "),
+        _c("div", { staticClass: "card text-right" }, [
           _c("div", { staticClass: "card-body table-responsive p-0" }, [
             _c("table", { staticClass: "table table-hover text-nowrap" }, [
-              _vm._m(2),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "tbody",
@@ -37656,25 +37823,41 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(candidate.phone))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(candidate.email))]),
-                    _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(candidate.birthday))]),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(candidate.birthplace))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(candidate.verification_card))]),
-                    _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(candidate.residence))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(candidate.commune))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(candidate.Electricity_bill))]),
+                    _c("td", [_vm._v(_vm._s(candidate.Anem))]),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(candidate.field))]),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(candidate.Study_level))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(candidate.Certificate))])
+                    _c("td", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn ",
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              return _vm.showModal(candidate)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fas fa-file-alt red " })]
+                      ),
+                      _vm._v(
+                        "\n                                |\n                                "
+                      ),
+                      _vm._m(2, true),
+                      _vm._v(
+                        "\n                                |\n                                "
+                      ),
+                      _vm._m(3, true)
+                    ])
                   ])
                 }),
                 0
@@ -37683,7 +37866,451 @@ var render = function() {
           ])
         ])
       ])
-    ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "infotClt",
+          tabindex: "-1",
+          "aria-labelledby": "infoCltLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "modal-dialog modal-lg form-dark",
+            attrs: { role: "document" }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "modal-content text-right card card-image" },
+              [
+                _c(
+                  "div",
+                  { staticClass: " rgba-stylish-strong px-5 z-depth-4" },
+                  [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "modal-body " }, [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col" }, [
+                          _c(
+                            "label",
+                            {
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v("اسم و اللقب : ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-red ",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.candidate.name))]
+                          ),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-uppercase",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v("رقم الهاتف :")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-red ",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.candidate.phone))]
+                          ),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-uppercase",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v("الايميل الخاص : ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-red ",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.candidate.email))]
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("hr", {
+                        staticStyle: {
+                          "border-top": "1px solid #d3d3d7",
+                          width: "40%"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col" }, [
+                          _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "col" }, [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "text-uppercase",
+                                  attrs: {
+                                    "data-error": "wrong",
+                                    "data-success": "right"
+                                  }
+                                },
+                                [_vm._v("تاريخ الإزدياد : ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "text-red ",
+                                  attrs: {
+                                    "data-error": "wrong",
+                                    "data-success": "right"
+                                  }
+                                },
+                                [_vm._v(_vm._s(_vm.candidate.birthday) + " ")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col" }, [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "text-uppercase",
+                                  attrs: {
+                                    "data-error": "wrong",
+                                    "data-success": "right"
+                                  }
+                                },
+                                [_vm._v("مكان الازدياد : ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "text-red ",
+                                  attrs: {
+                                    "data-error": "wrong",
+                                    "data-success": "right"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "  " + _vm._s(_vm.candidate.birthplace)
+                                  )
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col" }, [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "text-uppercase",
+                                  attrs: {
+                                    "data-error": "wrong",
+                                    "data-success": "right"
+                                  }
+                                },
+                                [_vm._v("نسخة من بطاقة التعريف : ")]
+                              ),
+                              _vm._v(" "),
+                              _c("img", {
+                                staticClass: "card-img-top zoom ",
+                                attrs: {
+                                  width: "200",
+                                  height: "200",
+                                  src: _vm.verification_card(_vm.candidate),
+                                  alt: "Card image cap"
+                                }
+                              })
+                            ])
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("hr", {
+                        staticStyle: {
+                          "border-top": "1px solid #d3d3d7",
+                          width: "40%"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-4" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-uppercase",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v("التخصص : ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-red ",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.candidate.field))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-4" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-uppercase",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v("المستوى الدراسي : ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-red ",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.communetest.Study_level))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-4" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-uppercase",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v("نسخة من الشهادة\\ الديبلوم : ")]
+                          ),
+                          _vm._v(" "),
+                          _c("img", {
+                            staticClass: "card-img-top zoom",
+                            attrs: {
+                              width: "200",
+                              height: "200",
+                              src: _vm.Certificate(_vm.candidate),
+                              alt: "Card image cap"
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("hr", {
+                        staticStyle: {
+                          "border-top": "1px solid #d3d3d7",
+                          width: "40%"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-4" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-uppercase",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v("مكان الإقامة الحالية : ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-red ",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.candidate.residence))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-4" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-uppercase",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v("البلدية : ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-red ",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.communetest.arabic_name))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-4" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-uppercase",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v("نسخة من فاتورة الكهرباء\\ الماء : ")]
+                          ),
+                          _vm._v(" "),
+                          _c("img", {
+                            staticClass: "card-img-top zoom",
+                            attrs: {
+                              width: "200",
+                              height: "200",
+                              src: _vm.Electricity_bill(_vm.candidate),
+                              alt: "Card image cap"
+                            }
+                          })
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("hr", {
+                        staticStyle: {
+                          "border-top": "1px solid #d3d3d7",
+                          width: "40%"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col" }, [
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-uppercase",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v("رقم الوسيط : ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-red ",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.communetest.wassit))]
+                          ),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-uppercase",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v("فرع مكتب التشغيل  :  ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-red ",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.communetest.Anem))]
+                          )
+                        ])
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._m(5)
+              ]
+            )
+          ]
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -37694,12 +38321,12 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row  justify-content-center mt-5" }, [
       _c("div", { staticClass: "col-md-6" }, [
         _c("img", {
-          attrs: { src: "svg/fill_form.svg", width: "500", height: "400" }
+          attrs: { src: "svg/Select_option.svg", width: "500", height: "400" }
         })
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-6" }, [
-        _c("h1", { staticClass: "text-right" }, [_vm._v("استمارة")]),
+        _c("h1", { staticClass: "text-right" }, [_vm._v("قائمة المسجلين")]),
         _vm._v(" "),
         _c("p", { staticClass: "text-right" }, [
           _vm._v(
@@ -37713,9 +38340,25 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("h3", { staticClass: "card-title" }, [
-        _vm._v("Responsive Hover Table")
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("اسم و اللقب")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("رقم الهاتف")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("تاريخ الإزدياد")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("مكان الازدياد")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("مكان الإقامة الحالية")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("مكتب التشغيل")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("التخصص")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("المستوى الدراسي")]),
+        _vm._v(" "),
+        _c("th", [_vm._v(" معلومات | قبول | رفض")])
       ])
     ])
   },
@@ -37723,32 +38366,65 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("اسم و اللقب")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("رقم الهاتف")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("الايميل الخاص")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("تاريخ الإزدياد")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("مكان الازدياد")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("نسخة من بطاقة التعريف ")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("مكان الإقامة الحالية")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("البلدية")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("نسخة من فاتورة الكهرباء\\ الماء")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("التخصص")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("المستوى الدراسي")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("نسخة من الشهادة\\ الديبلوم")])
-      ])
+    return _c("a", { staticClass: "btn ", attrs: { href: "#" } }, [
+      _c("i", { staticClass: "fas fa-user-edit teal " })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "btn ", attrs: { href: "#" } }, [
+      _c("i", { staticClass: "fas fa-times red " })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header text-center py-4 pb-4" }, [
+      _c(
+        "h3",
+        {
+          staticClass: "modal-title w-100 text-blue  font-weight-bold",
+          attrs: { id: "myModalLabel" }
+        },
+        [
+          _c("strong", [_vm._v("Details\n                            de")]),
+          _vm._v(" "),
+          _c("a", { staticClass: "text-test font-weight-bold" }, [
+            _c("strong", [_vm._v("Client ")])
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close white-text",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger ",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Fermer")]
+      )
     ])
   }
 ]
@@ -53184,6 +53860,18 @@ Vue.compile = compileToFunctions;
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
 /******/ 		};
 /******/ 	})();
 /******/ 	

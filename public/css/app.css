@@ -51870,6 +51870,54 @@ a.text-muted:hover {
   color: #3f474e;
 }
 @charset "UTF-8";
+.blue {
+  color: #3490dc;
+}
+
+.indigo {
+  color: #6574cd;
+}
+
+.purple {
+  color: #9561e2;
+}
+
+.pink {
+  color: #f66d9b;
+}
+
+.red {
+  color: #e3342f;
+}
+
+.orange {
+  color: #f6993f;
+}
+
+.yellow {
+  color: #ffed4a;
+}
+
+.green {
+  color: #38c172;
+}
+
+.teal {
+  color: #4dc0b5;
+}
+
+.cyan {
+  color: #6cb2eb;
+}
+
+.turquoise {
+  color: #1abc9c;
+}
+
+.sunflower {
+  color: #f1c40f;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -67978,4 +68026,19 @@ readers do not read off random characters that represent icons */
 .fab {
   font-family: "Font Awesome 5 Brands";
   font-weight: 400;
+}
+
+.text-white {
+  color: #000000 !important;
+}
+
+.zoom {
+  transition: transform 0.5s;
+  /* Animation */
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(4.4);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }

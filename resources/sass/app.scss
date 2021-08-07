@@ -17,3 +17,21 @@ $fa-font-path:        "../webfonts";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+
+.text-white {
+    color: #000000 !important;
+}
+
+
+.zoom {
+
+    transition: transform .5s; /* Animation */
+
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    transform: scale(4.4); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+

@@ -16,6 +16,7 @@ class CreateVolunteersTable extends Migration
         Schema::create('volunteers', function (Blueprint $table) {
             $table->id();
             $table->integer('commune')->default("1089");
+            $table->string('Anem')->default("ورقلة 1");
             $table->timestamps();
         });
     }
