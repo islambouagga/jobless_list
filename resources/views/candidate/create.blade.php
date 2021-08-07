@@ -77,22 +77,42 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="col-sm-4">
                                         <div class="form-group text-right">
                                             <label>اسم و اللقب</label>
-                                            <input type="text" name="name" class="form-control" placeholder="اللقب">
+                                            <input type="text" name="name"
+                                                   class="form-control @error('name') is-invalid @enderror"
+                                                   placeholder="اللقب">
+                                            @error('name')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="form-group text-right">
                                             <label>رقم الهاتف</label>
-                                            <input type="text" name="phone" class="form-control"
+                                            <input type="text" name="phone"
+                                                   class="form-control @error('phone') is-invalid @enderror"
                                                    placeholder="رقم الهاتف">
+                                            @error('phone')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <!-- text input -->
                                         <div class="form-group text-right">
                                             <label>الايميل الخاص</label>
-                                            <input type="email" class="form-control" name="email"
+                                            <input type="email"
+                                                   class="form-control @error('email') is-invalid @enderror"
+                                                   name="email"
                                                    placeholder="الايميل الخاص">
+                                            @error('email')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -101,23 +121,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>تاريخ الإزدياد</label>
-                                            <input type="date" class="form-control" name="birthday"
+                                            <input type="date"
+                                                   class="form-control @error('birthday') is-invalid @enderror"
+                                                   name="birthday"
                                                    placeholder="تاريخ الإزدياد">
+                                            @error('birthday')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>مكان الازدياد</label>
-                                            <input type="text" class="form-control" name="birthplace"
+                                            <input type="text"
+                                                   class="form-control @error('birthplace') is-invalid @enderror"
+                                                   name="birthplace"
                                                    placeholder="مكان الازدياد">
+                                            @error('birthplace')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>نسخة من بطاقة التعريف </label>
-                                            <input type="file" name="verification_card" class="form-control">
+                                            <input type="file" name="verification_card"
+                                                   class="form-control @error('verification_card') is-invalid @enderror">
+                                            @error('verification_card')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -125,15 +165,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="col-sm-4">
                                         <div class="form-group text-right">
                                             <label>مكان الإقامة الحالية</label>
-                                            <input type="text" class="form-control" name="residence"
+                                            <input type="text"
+                                                   class="form-control @error('residence') is-invalid @enderror"
+                                                   name="residence"
                                                    placeholder="الإقامة الحالية">
+                                            @error('residence')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <!-- select -->
                                         <div class="form-group text-right">
                                             <label>البلدية</label>
-                                            <select class="form-control" name="commune">
+                                            <select class="form-control @error('commune') is-invalid @enderror"
+                                                    name="commune">
                                                 @foreach (communes($wilaya_id = 30, $withWilaya = true, 'arabic_name') as $id => $commune)
                                                     <option value="{{ $id }}">{{ $commune }}</option>
                                                 @endforeach
@@ -144,7 +192,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>نسخة من فاتورة الكهرباء\ الماء</label>
-                                            <input type="file" name="Electricity_bill" class="form-control">
+                                            <input type="file" name="Electricity_bill"
+                                                   class="form-control @error('Electricity_bill') is-invalid @enderror">
+                                            @error('Electricity_bill')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -153,8 +207,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <!-- select -->
                                         <div class="form-group text-right">
                                             <label>التخصص</label>
-                                            <select class="form-control select2 " name="field" style="width: 100%;">
-                                                <option selected="selected" value="الصيدلة">الصيدلة</option>
+                                            <select class="form-control select2 @error('field') is-invalid @enderror "
+                                                    name="field" style="width: 100%;">
+                                                <option selected="selected" value="الصيدلة">اختيار تخصصك</option>
+                                                <option value="الصيدلة">الصيدلة</option>
                                                 <option value="محروقات">محروقات</option>
                                                 <option value="الهندسة البيوطبية">الهندسة البيوطبية</option>
                                                 <option value="كمياء">كمياء</option>
@@ -228,12 +284,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <option value="طب الأسنان">طب الأسنان</option>
                                                 <option value="لغة و أدب عربي<">لغة و أدب عربي</option>
                                             </select>
+                                            @error('field')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-sm-4 text-right">
                                         <!-- radio -->
-                                        <label class="">المستوى الدراسي</label>
-                                        <div class="form-group row text-right " style="    margin-left: 12.5%;">
+                                        <label class="">المستوى الدراسي</label> <span class="text-red" style="margin-right: 8%;font-weight: bold">
+                                            <blode>
+                                     عليك باختيار مستواك الدراسي.
+                                                </blode>
+                                    </span>
+                                        <div
+                                            class="form-group row text-right @error('Study_level') is-invalid @enderror "
+                                            style="    margin-left: 12.5%;">
                                             <div class="custom-control custom-radio" style="    margin-left: 12.5%;">
                                                 <input class="custom-control-input" type="radio" id="customRadio1"
                                                        value="تقني سامي" name="Study_level">
@@ -241,7 +308,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </div>
                                             <div class="custom-control custom-radio" style="    margin-left: 12.5%;">
                                                 <input class="custom-control-input" type="radio" id="customRadio2"
-                                                       value="ليسانس" name="Study_level" checked>
+                                                       value="ليسانس" name="Study_level">
                                                 <label for="customRadio2" class="custom-control-label">ليسانس</label>
                                             </div>
                                             <div class="custom-control custom-radio" style="    margin-left: 12.5%;">
@@ -254,13 +321,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                        id="customRadio4" value="دكتوراه" name="Study_level">
                                                 <label for="customRadio4" class="custom-control-label">دكتوراه</label>
                                             </div>
+
+
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <!-- textarea -->
-                                        <div class="form-group text-right">
+                                        <div class="form-group text-right ">
                                             <label>نسخة من الشهادة\ الديبلوم</label>
-                                            <input type="file" name="Certificate" class="form-control">
+                                            <input type="file" name="Certificate"
+                                                   class="form-control @error('Certificate') is-invalid @enderror">
+                                            @error('Certificate')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -269,23 +344,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>رقم الوسيط </label>
-                                            <input type="number" class="form-control" name="wassit"
+                                            <input type="number"
+                                                   class="form-control @error('wassit') is-invalid @enderror"
+                                                   name="wassit"
                                                    placeholder="رقم الوسيط">
+                                            @error('wassit')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>فرع مكتب التشغيل </label>
-                                            <select class="form-control select2 " name="Anem" style="width: 100%;">
-                                                <option selected="selected" value="ورقلة 1">ورقلة 1</option>
-                                                <option selected="selected" value="ورقلة 2">ورقلة 2</option>
-                                                <option selected="selected" value="ح.مسعود">ح.مسعود</option>
-                                                <option selected="selected" value="الرويسات">الرويسات</option>
-                                                <option selected="selected" value="س-خويلد">س-خويلد</option>
-                                                <option selected="selected" value="النقوسة">النقوسة</option>
-                                                <option selected="selected" value="البرمة">البرمة</option>
+                                            <select class="form-control select2  @error('Anem') is-invalid @enderror"
+                                                    name="Anem" style="width: 100%;">
+                                                <option value="ورقلة 1">ورقلة 1</option>
+                                                <option value="ورقلة 2">ورقلة 2</option>
+                                                <option value="ح.مسعود">ح.مسعود</option>
+                                                <option value="الرويسات">الرويسات</option>
+                                                <option value="س-خويلد">س-خويلد</option>
+                                                <option value="النقوسة">النقوسة</option>
+                                                <option value="البرمة">البرمة</option>
                                             </select>
+                                            @error('Anem')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>

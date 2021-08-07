@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Candidate;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class CandidateController extends Controller
@@ -15,6 +16,19 @@ class CandidateController extends Controller
      */
     public function index()
     {
+        $ageavrage=0;
+        $agelist = array();
+        $Candidates = Candidate::all();
+        foreach ($Candidates as $Candidate){
+            $age = Carbon::parse($Candidate->birthday)->diff(Carbon::now())->y;
+            array_push($agelist,$age);
+        }
+        foreach ($agelist as $age){
+            $ageavrage =$ageavrage+ $age;
+        }
+//        dd($agelist ,$ageavrage  );
+        $ageavrage = $ageavrage / count($agelist);
+//        dd($agelist ,$ageavrage  );
         return Candidate::all();
     }
 
@@ -35,7 +49,7 @@ class CandidateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Candidate $candidate)
     {
         //
     }
@@ -47,9 +61,17 @@ class CandidateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Candidate $candidate)
     {
-        //
+//        $request->date_of_birth = "2000-10-25";
+        $age = Carbon::parse($request->birthday)->diff(Carbon::now())->y;
+
+        dd($age. " Years"); // To check result
+
+
+        $candidate->statu =  $request->statu;
+        $candidate->save();
+        return $candidate;
     }
 
     /**
@@ -58,7 +80,7 @@ class CandidateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Candidate $candidate)
     {
         //
     }

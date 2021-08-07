@@ -2037,10 +2037,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      ageAvvrage: null,
       candidates: {},
+      candidateslist: null,
       communetest: {},
       candidate: new Form({
         id: '',
@@ -2057,7 +2092,8 @@ __webpack_require__.r(__webpack_exports__);
         Study_level: '',
         Certificate: '',
         wassit: '',
-        Anem: ''
+        Anem: '',
+        statu: ''
       })
     };
   },
@@ -2065,8 +2101,8 @@ __webpack_require__.r(__webpack_exports__);
     showModal: function showModal(candidate) {
       var _this = this;
 
-      $('#infotClt').modal('show');
-      console.log(candidate.commune);
+      $('#infotClt').modal('show'); // console.log(candidate.commune)
+
       this.candidate.fill(candidate);
       axios.get('api/communes/' + candidate.commune).then(function (_ref) {
         var data = _ref.data;
@@ -2081,6 +2117,18 @@ __webpack_require__.r(__webpack_exports__);
         return _this2.candidates = data;
       });
     },
+    acceptcandidate: function acceptcandidate(candidate) {
+      this.candidate.fill(candidate);
+      this.candidate.statu = "مقبول";
+      this.candidate.put('api/candidate/' + this.candidate.id);
+      Fire.$emit('AfterCreate');
+    },
+    refusecandidate: function refusecandidate(candidate) {
+      this.candidate.fill(candidate);
+      this.candidate.statu = "مرفوض";
+      this.candidate.put('api/candidate/' + this.candidate.id);
+      Fire.$emit('AfterCreate');
+    },
     verification_card: function verification_card(candidate) {
       var photo = "files/" + candidate.name + "/" + candidate.verification_card;
       return photo;
@@ -2092,10 +2140,44 @@ __webpack_require__.r(__webpack_exports__);
     Certificate: function Certificate(candidate) {
       var photo = "files/" + candidate.name + "/" + candidate.Certificate;
       return photo;
+    },
+    calculateAgeavverage: function calculateAgeavverage() {
+      var _this3 = this;
+
+      var $ageavrage = 0;
+      var agelist = [];
+      axios.get('api/candidate').then(function (_ref3) {
+        var data = _ref3.data;
+        return _this3.candidateslist = data, _this3.candidateslist.forEach(function (item) {
+          console.log(item);
+          var today = new Date();
+          var birthDate = new Date(item.birthday);
+          var age = today.getFullYear() - birthDate.getFullYear();
+          var m = today.getMonth() - birthDate.getMonth();
+
+          if (m < 0 || m === 0 && today.getDate() < birthDate.getDate()) {
+            age--;
+          }
+
+          agelist.push(age);
+        }), agelist.forEach(function (item) {
+          console.log("age");
+          console.log(item);
+          $ageavrage = $ageavrage + item;
+          console.log('$ageavrage');
+          console.log($ageavrage);
+        }), console.log('$ageavrage'), console.log($ageavrage), _this3.ageAvvrage = $ageavrage / agelist.length;
+      });
     }
   },
   created: function created() {
+    var _this4 = this;
+
     this.loadCandidates();
+    this.calculateAgeavverage();
+    Fire.$on('AfterCreate', function () {
+      _this4.loadCandidates();
+    });
   },
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -2172,6 +2254,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__.default({
   routes: routes // short for `routes: routes`
 
 });
+window.Fire = new Vue();
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -37809,6 +37892,8 @@ var render = function() {
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "row " }, [
+      _c("h2", [_vm._v(" age is " + _vm._s(this.ageAvvrage))]),
+      _vm._v(" "),
       _c("div", { staticClass: "col-12" }, [
         _c("div", { staticClass: "card text-right" }, [
           _c("div", { staticClass: "card-body table-responsive p-0" }, [
@@ -37818,47 +37903,74 @@ var render = function() {
               _c(
                 "tbody",
                 _vm._l(_vm.candidates, function(candidate) {
-                  return _c("tr", { key: candidate.id }, [
-                    _c("td", [_vm._v(_vm._s(candidate.name))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(candidate.phone))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(candidate.birthday))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(candidate.birthplace))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(candidate.residence))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(candidate.Anem))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(candidate.field))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(candidate.Study_level))]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "btn ",
-                          attrs: { href: "#" },
-                          on: {
-                            click: function($event) {
-                              return _vm.showModal(candidate)
-                            }
-                          }
-                        },
-                        [_c("i", { staticClass: "fas fa-file-alt red " })]
-                      ),
-                      _vm._v(
-                        "\n                                |\n                                "
-                      ),
-                      _vm._m(2, true),
-                      _vm._v(
-                        "\n                                |\n                                "
-                      ),
-                      _vm._m(3, true)
-                    ])
-                  ])
+                  return candidate.statu === null
+                    ? _c("tr", { key: candidate.id }, [
+                        _c("td", [_vm._v(_vm._s(candidate.name))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(candidate.phone))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(candidate.birthday))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(candidate.birthplace))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(candidate.residence))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(candidate.Anem))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(candidate.field))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(candidate.Study_level))]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "btn ",
+                              on: {
+                                click: function($event) {
+                                  return _vm.showModal(candidate)
+                                }
+                              }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fas fa-file-alt Electromagnetic "
+                              })
+                            ]
+                          ),
+                          _vm._v(
+                            "\n                                |\n                                "
+                          ),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "btn ",
+                              on: {
+                                click: function($event) {
+                                  return _vm.acceptcandidate(candidate)
+                                }
+                              }
+                            },
+                            [_c("i", { staticClass: "fas fa-user-edit teal " })]
+                          ),
+                          _vm._v(
+                            "\n                                |\n                                "
+                          ),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "btn",
+                              on: {
+                                click: function($event) {
+                                  return _vm.refusecandidate(candidate)
+                                }
+                              }
+                            },
+                            [_c("i", { staticClass: "fas fa-times red " })]
+                          )
+                        ])
+                      ])
+                    : _vm._e()
                 }),
                 0
               )
@@ -37895,7 +38007,7 @@ var render = function() {
                   "div",
                   { staticClass: " rgba-stylish-strong px-5 z-depth-4" },
                   [
-                    _vm._m(4),
+                    _vm._m(2),
                     _vm._v(" "),
                     _c("div", { staticClass: "modal-body " }, [
                       _c("div", { staticClass: "row" }, [
@@ -37934,7 +38046,11 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v("رقم الهاتف :")]
+                            [
+                              _vm._v(
+                                "رقم الهاتف\n                                    :"
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c(
@@ -37960,7 +38076,11 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v("الايميل الخاص : ")]
+                            [
+                              _vm._v(
+                                "الايميل الخاص\n                                    : "
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c(
@@ -37997,7 +38117,11 @@ var render = function() {
                                     "data-success": "right"
                                   }
                                 },
-                                [_vm._v("تاريخ الإزدياد : ")]
+                                [
+                                  _vm._v(
+                                    "تاريخ\n                                            الإزدياد : "
+                                  )
+                                ]
                               ),
                               _vm._v(" "),
                               _c(
@@ -38023,7 +38147,11 @@ var render = function() {
                                     "data-success": "right"
                                   }
                                 },
-                                [_vm._v("مكان الازدياد : ")]
+                                [
+                                  _vm._v(
+                                    "مكان\n                                            الازدياد : "
+                                  )
+                                ]
                               ),
                               _vm._v(" "),
                               _c(
@@ -38037,7 +38165,8 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "  " + _vm._s(_vm.candidate.birthplace)
+                                    "\n                                            " +
+                                      _vm._s(_vm.candidate.birthplace)
                                   )
                                 ]
                               )
@@ -38053,7 +38182,11 @@ var render = function() {
                                     "data-success": "right"
                                   }
                                 },
-                                [_vm._v("نسخة من بطاقة التعريف : ")]
+                                [
+                                  _vm._v(
+                                    "نسخة\n                                            من بطاقة التعريف : "
+                                  )
+                                ]
                               ),
                               _vm._v(" "),
                               _c("img", {
@@ -38088,7 +38221,11 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v("التخصص : ")]
+                            [
+                              _vm._v(
+                                "التخصص\n                                    : "
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c(
@@ -38114,7 +38251,11 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v("المستوى الدراسي : ")]
+                            [
+                              _vm._v(
+                                "المستوى\n                                    الدراسي : "
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c(
@@ -38140,7 +38281,11 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v("نسخة من الشهادة\\ الديبلوم : ")]
+                            [
+                              _vm._v(
+                                "نسخة من\n                                    الشهادة\\ الديبلوم : "
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c("img", {
@@ -38173,7 +38318,11 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v("مكان الإقامة الحالية : ")]
+                            [
+                              _vm._v(
+                                "مكان الإقامة\n                                    الحالية : "
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c(
@@ -38199,7 +38348,11 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v("البلدية : ")]
+                            [
+                              _vm._v(
+                                "البلدية\n                                    : "
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c(
@@ -38225,7 +38378,11 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v("نسخة من فاتورة الكهرباء\\ الماء : ")]
+                            [
+                              _vm._v(
+                                "نسخة من فاتورة\n                                    الكهرباء\\ الماء : "
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c("img", {
@@ -38258,7 +38415,11 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v("رقم الوسيط : ")]
+                            [
+                              _vm._v(
+                                "رقم الوسيط\n                                    : "
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c(
@@ -38284,7 +38445,11 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v("فرع مكتب التشغيل  :  ")]
+                            [
+                              _vm._v(
+                                "فرع مكتب\n                                    التشغيل : "
+                              )
+                            ]
                           ),
                           _vm._v(" "),
                           _c(
@@ -38304,7 +38469,7 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(5)
+                _vm._m(3)
               ]
             )
           ]
@@ -38330,7 +38495,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "text-right" }, [
           _vm._v(
-            '\n                ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي\n                للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ\n                طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد محتوى نصي، هنا يوجد محتوى نصي" فتجعلها تبدو (أي\n                الأحرف) وكأنها نص مقروء. العديد من برامح النشر المكتبي وبرامح تحرير صفحات الويب تستخدم لوريم إيبسوم بشكل\n                إفتراضي كنموذج عن النص، وإذا قمت بإدخال "lorem ipsum" في أي محرك بحث ستظهر العديد من المواقع الحديثة\n                العهد في نتائج البحث. على مدى السنين ظهرت نسخ جديدة ومختلفة من نص لوريم إيبسوم، أحياناً عن طريق الصدفة،\n                وأحياناً عن عمد كإدخال بعض العبارات الفكاهية إليها.\n            '
+            '\n                ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل\n                الخارجي\n                للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي\n                توزيعاَ\n                طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد محتوى نصي، هنا يوجد محتوى نصي" فتجعلها تبدو\n                (أي\n                الأحرف) وكأنها نص مقروء. العديد من برامح النشر المكتبي وبرامح تحرير صفحات الويب تستخدم لوريم إيبسوم\n                بشكل\n                إفتراضي كنموذج عن النص، وإذا قمت بإدخال "lorem ipsum" في أي محرك بحث ستظهر العديد من المواقع الحديثة\n                العهد في نتائج البحث. على مدى السنين ظهرت نسخ جديدة ومختلفة من نص لوريم إيبسوم، أحياناً عن طريق\n                الصدفة،\n                وأحياناً عن عمد كإدخال بعض العبارات الفكاهية إليها.\n            '
           )
         ])
       ])
@@ -38360,22 +38525,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v(" معلومات | قبول | رفض")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "btn ", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "fas fa-user-edit teal " })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "btn ", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "fas fa-times red " })
     ])
   },
   function() {

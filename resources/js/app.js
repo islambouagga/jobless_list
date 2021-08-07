@@ -28,7 +28,7 @@ const router = new VueRouter({
 
 
 
-
+window.Fire = new Vue();
 
 /**
  * The following block of code may be used to automatically register your

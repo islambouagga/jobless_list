@@ -29,6 +29,7 @@ class CreateCandidatesTable extends Migration
             $table->bigInteger('wassit');
             $table->string('Study_level');
             $table->string('Certificate');
+            $table->string('statu')->nullable();
             $table->timestamps();
         });
     }
