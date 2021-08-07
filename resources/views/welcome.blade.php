@@ -164,25 +164,11 @@
             <div class="row">
                 <div class="main_about">
                     <div class="col-md-6">
-                        <div class="about_content" style="text-align:right;">
-                            <h2>من نحن</h2>
-                            <div class="separator_left"></div>
-
-                            <p style="font-size: 153%;"> تنسيقية حاملي الشهادات الجامعية هي عبارة عن فكرة بسيطة قادها
-                                مجموعة من الشباب منذ سنة 2018 اي قبل مسابقة سونطراك iap
-                                2018.للتنسيقية مجموعة من الاهداف التي تسعى لتحقيقها من بينها استرجاع كرامة الاطار
-                                الورڨلي (خريجي الجامعات)،فتح مكتب تشغيل خاص بالاطارات وفقط من تسيير اطار خريج جامعة ذو
-                                كفاءة.مرافقة خريج الجامعة من بداية تسجيله في عرض العمل الى غاية حصوله على منصب العمل.
-                                شعارنا «#تنسيقية_حاملي_الشهادات_الجامعية-ورقلة-» •ارادة•قوة•تحدي.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
                         <div class="about_accordion wow fadeIn">
-                            <h2>اهدافنا</h2>
-                            <div id="faq_main_content" class="faq_main_content">
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i> الأولوية في التشغيل </h6>
-                                <div>
+                            <h2 class="text-right">اهدافنا</h2>
+                            <div id="faq_main_content" class="faq_main_content " style="direction: rtl">
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i> الأولوية في التشغيل </h6>
+                                <div class="open">
                                     <div class="content" style="text-align:right;">
                                         <p style="font-size: 130%">الأولوية في التشغيل لسكان الولاية وليس العكس (تطبيق
                                             تعليمة الوزير الأول رقم
@@ -191,9 +177,9 @@
                                     </div>
                                 </div> <!-- End off accordion item-1 -->
 
-                                <h6 style="font-size: 140%;" class=""><i class="fa fa-angle-right"></i> التوظيف عن طريق
+                                <h6 class="open" style="font-size: 140%;" class=""><i class="fa fa-angle-right" style="margin-right: 0%"></i> التوظيف عن طريق
                                     مكتب التشغيل</h6>
-                                <div class="">
+                                <div class="open">
                                     <div class="content" style="text-align:right;">
                                         <p style="font-size: 130%">إلزام الشركات الناشطة على مستوى تراب الولاية بالتوظيف
                                             عن طريق مكتب التشغيل
@@ -201,28 +187,28 @@
                                     </div>
                                 </div> <!-- End off accordion item-2 -->
 
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i> بطاقة إقامة</h6>
-                                <div>
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i> بطاقة إقامة</h6>
+                                <div class="open">
                                     <div class="content" style="text-align:right;">
                                         <p style="font-size: 130%">بطاقة إقامة خاصة بملف التشغيل ممضية من طرف رئيس
                                             البلدية فقط. </p>
                                     </div>
                                 </div> <!-- End off accordion item-3 -->
 
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i> الوسيط و الضمان الإجتماعي
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i> الوسيط و الضمان الإجتماعي
                                 </h6>
-                                <div>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">ربط نظام الوسيط بالصندوق الضمان الإجتماعي. </p>
                                     </div>
                                 </div> <!-- End off accordion item-4 -->
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i> نظام الوسيط </h6>
-                                <div>
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i> نظام الوسيط </h6>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">تحيين نظام الوسيط الحالي.</p>
                                     </div>
                                 </div> <!-- End off accordion item-4 -->
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>إحصاء الإطارات </h6>
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>إحصاء الإطارات </h6>
                                 <div>
                                     <div class="content">
                                         <p style="font-size: 130%">إحصاء الإطارات البطالة وكذلك متابعة ومرافقة الإطار في
@@ -230,24 +216,24 @@
                                     </div>
                                 </div> <!-- End off accordion item-4 -->
 
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>إحصاء الإطارات </h6>
-                                <div>
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>إحصاء الإطارات </h6>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">إحصاء الإطارات البطالة وكذلك متابعة ومرافقة الإطار في
                                             عملية التشغيل.</p>
                                     </div>
                                 </div> <!-- End off accordion item-4 -->
 
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>متابعة العروض </h6>
-                                <div>
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>متابعة العروض </h6>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">لجنة متابعة العروض الخاصة بالإطارات في جمبع بلديات
                                             ورقلة.</p>
                                     </div>
                                 </div> <!-- End off accordion item-4 -->
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>ضمان المصداقية والشفافية
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>ضمان المصداقية والشفافية
                                 </h6>
-                                <div>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">هيئة رقابية تراقب الفحص المهني على مستوى المؤسسات
                                             والشركات لضمان المصداقية
@@ -257,9 +243,9 @@
                                 </div> <!-- End off accordion item-4 -->
 
 
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>ضمان المصداقية والشفافية
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>ضمان المصداقية والشفافية
                                 </h6>
-                                <div>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">هيئة رقابية تراقب الفحص المهني على مستوى المؤسسات
                                             والشركات لضمان المصداقية
@@ -267,8 +253,8 @@
                                             التلاعبات.</p>
                                     </div>
                                 </div> <!-- End off accordion item-4 -->
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>إظهار النتائج </h6>
-                                <div>
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>إظهار النتائج </h6>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">هيئة رقابية تراقب الفحص المهني على مستوى المؤسسات
                                             والشركات لضمان المصداقية
@@ -276,8 +262,8 @@
                                             التلاعبات.</p>
                                     </div>
                                 </div> <!-- End off accordion item-4 -->
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>عروض العمل </h6>
-                                <div>
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>عروض العمل </h6>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">المطالبة بعروض العمل الخاصة بالشركات الناشطة في تراب
                                             الولاية.</p>
@@ -285,30 +271,30 @@
                                 </div> <!-- End off accordion item-4 -->
 
 
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>7000 منصب </h6>
-                                <div>
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>7000 منصب </h6>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">توفير ازيد من 7000 منصب بالنسبة للإطارات (لكلا
                                             الجنسين) في أقرب الآجال
                                             للتخفيف من حدة الإحتقان في الشارع.</p>
                                     </div>
                                 </div> <!-- End off accordion item-4 -->
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>الشروط التعجزية </h6>
-                                <div>
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>الشروط التعجزية </h6>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">إلغاء الشروط التعجزية كالسن، المعدل والخبرة.</p>
                                     </div>
                                 </div> <!-- End off accordion item-4 -->
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>رفع التجميد </h6>
-                                <div>
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>رفع التجميد </h6>
+                                <div class="open">
                                     <div class="content">
                                         <p>رفع التجميد عن مناصب العمل على مستوى الإدارات والمديريات العمومية (من 2016
                                             منصب واحد كل عام) والأولوية للتوظيف الداخلي.</p>
                                     </div>
                                 </div> <!-- End off accordion item-4 -->
 
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>فتح تحقيق </h6>
-                                <div>
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>فتح تحقيق </h6>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">فتح تحقيق معمق مع مسؤولي قطاع الشغل على مستوى وكالة
                                             ومدرية التشغيل في ولاية
@@ -317,17 +303,17 @@
                                     </div>
                                 </div> <!-- End off accordion item-4 -->
 
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>دور مفتشية العمل </h6>
-                                <div>
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>دور مفتشية العمل </h6>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">تفعيل دور مفتشية العمل على مستوى ولاية ورقلة.
                                         </p>
                                     </div>
                                 </div> <!-- End off accordion item-4 -->
 
-                                <h6 style="font-size: 140%;"><i class="fa fa-angle-right"></i>مكتب خاص بحاملي الشهادات
+                                <h6 class="open" style="font-size: 140%;"><i class="fa fa-angle-right" style="margin-right: 0%"></i>مكتب خاص بحاملي الشهادات
                                     الجامعية </h6>
-                                <div>
+                                <div class="open">
                                     <div class="content">
                                         <p style="font-size: 130%">فتح مكتب خاص بحاملي الشهادات الجامعية على مستوى
                                             الفروع المحلية للتشغيل.
@@ -336,6 +322,20 @@
                                 </div> <!-- End off accordion item-4 -->
 
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about_content" style="text-align:right;">
+                            <h2>من نحن</h2>
+                            <div class="separator_left text-right"></div>
+
+                            <p style="font-size: 153%;"> تنسيقية حاملي الشهادات الجامعية هي عبارة عن فكرة بسيطة قادها
+                                مجموعة من الشباب منذ سنة 2018 اي قبل مسابقة سونطراك iap
+                                2018.للتنسيقية مجموعة من الاهداف التي تسعى لتحقيقها من بينها استرجاع كرامة الاطار
+                                الورڨلي (خريجي الجامعات)،فتح مكتب تشغيل خاص بالاطارات وفقط من تسيير اطار خريج جامعة ذو
+                                كفاءة.مرافقة خريج الجامعة من بداية تسجيله في عرض العمل الى غاية حصوله على منصب العمل.
+                                شعارنا «#تنسيقية_حاملي_الشهادات_الجامعية-ورقلة-» •ارادة•قوة•تحدي.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -379,7 +379,6 @@
                                 </div>
                                 <h4 class="m-top-20"> ارادة</h4>
                             </div>
-                            -->
                         </div>
                     </div>
                 </div>
@@ -1045,28 +1044,6 @@
         <div class="container">
             <div class="row">
                 <div class="main_contact roomy-100 text-white">
-                    <div class="col-md-4">
-                        <div class="rage_widget">
-                            <div class="widget_head">
-                                <h3 class="text-white">اتصل بنا</h3>
-                                <div class="separator_small"></div>
-                            </div>
-                            <!--                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
-                            <!--                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore-->
-                            <!--                                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,-->
-                            <!--                                quis nostrud exerci tation ullamcorper suscipit lobortis nisl-->
-                            <!--                                ut aliquip ex ea commodo consequat. </p>-->
-
-                            <div class="widget_socail m-top-30">
-                                <ul class="list-inline">
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-md-8 sm-m-top-30">
                         <form class="" action="subcribe.php">
                             <div class="row">
@@ -1096,6 +1073,28 @@
                             </div>
 
                         </form>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="rage_widget">
+                            <div class="widget_head">
+                                <h3 class="text-white">اتصل بنا</h3>
+                                <div class="separator_small"></div>
+                            </div>
+                            <!--                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
+                            <!--                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore-->
+                            <!--                                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,-->
+                            <!--                                quis nostrud exerci tation ullamcorper suscipit lobortis nisl-->
+                            <!--                                ut aliquip ex ea commodo consequat. </p>-->
+
+                            <div class="widget_socail m-top-30">
+                                <ul class="list-inline">
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div><!--End off row -->

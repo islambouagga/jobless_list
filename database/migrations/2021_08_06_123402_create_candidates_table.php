@@ -19,16 +19,15 @@ class CreateCandidatesTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->date('birthday');
-            $table->string('birthplace');
             $table->string('residence');
             $table->string('verification_card');
             $table->integer('commune');
-            $table->string('Electricity_bill');
+            $table->string('Electricity_bill')->nullable();
             $table->string('field');
             $table->string('Anem');
             $table->bigInteger('wassit');
             $table->string('Study_level');
-            $table->string('Certificate');
+            $table->string('Certificate')->nullable();
             $table->string('statu')->nullable();
             $table->timestamps();
         });

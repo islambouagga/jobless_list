@@ -20,7 +20,6 @@ class Candidate extends Model
         'email',
         'phone',
         'birthday',
-        'birthplace',
         'residence',
         'verification_card',
         'commune',

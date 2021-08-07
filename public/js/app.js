@@ -2050,26 +2050,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2083,7 +2063,6 @@ __webpack_require__.r(__webpack_exports__);
         email: '',
         phone: '',
         birthday: '',
-        birthplace: '',
         residence: '',
         verification_card: '',
         commune: '',
@@ -37911,8 +37890,6 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(candidate.birthday))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(candidate.birthplace))]),
-                        _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(candidate.residence))]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(candidate.Anem))]),
@@ -38149,41 +38126,6 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "مكان\n                                            الازدياد : "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "text-red ",
-                                  attrs: {
-                                    "data-error": "wrong",
-                                    "data-success": "right"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                            " +
-                                      _vm._s(_vm.candidate.birthplace)
-                                  )
-                                ]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col" }, [
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "text-uppercase",
-                                  attrs: {
-                                    "data-error": "wrong",
-                                    "data-success": "right"
-                                  }
-                                },
-                                [
-                                  _vm._v(
                                     "نسخة\n                                            من بطاقة التعريف : "
                                   )
                                 ]
@@ -38211,7 +38153,7 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-4" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
                           _c(
                             "label",
                             {
@@ -38241,7 +38183,7 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-md-4" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
                           _c(
                             "label",
                             {
@@ -38267,36 +38209,8 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v(_vm._s(_vm.communetest.Study_level))]
+                            [_vm._v(_vm._s(_vm.candidate.Study_level))]
                           )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-4" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "text-uppercase",
-                              attrs: {
-                                "data-error": "wrong",
-                                "data-success": "right"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "نسخة من\n                                    الشهادة\\ الديبلوم : "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("img", {
-                            staticClass: "card-img-top zoom",
-                            attrs: {
-                              width: "200",
-                              height: "200",
-                              src: _vm.Certificate(_vm.candidate),
-                              alt: "Card image cap"
-                            }
-                          })
                         ])
                       ]),
                       _vm._v(" "),
@@ -38308,7 +38222,7 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-4" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
                           _c(
                             "label",
                             {
@@ -38338,7 +38252,7 @@ var render = function() {
                           )
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-md-4" }, [
+                        _c("div", { staticClass: "col-md-6" }, [
                           _c(
                             "label",
                             {
@@ -38366,34 +38280,6 @@ var render = function() {
                             },
                             [_vm._v(_vm._s(_vm.communetest.arabic_name))]
                           )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-4" }, [
-                          _c(
-                            "label",
-                            {
-                              staticClass: "text-uppercase",
-                              attrs: {
-                                "data-error": "wrong",
-                                "data-success": "right"
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "نسخة من فاتورة\n                                    الكهرباء\\ الماء : "
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("img", {
-                            staticClass: "card-img-top zoom",
-                            attrs: {
-                              width: "200",
-                              height: "200",
-                              src: _vm.Electricity_bill(_vm.candidate),
-                              alt: "Card image cap"
-                            }
-                          })
                         ])
                       ]),
                       _vm._v(" "),
@@ -38431,7 +38317,7 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v(_vm._s(_vm.communetest.wassit))]
+                            [_vm._v(_vm._s(_vm.candidate.wassit))]
                           ),
                           _vm._v(" "),
                           _c("br"),
@@ -38461,7 +38347,7 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v(_vm._s(_vm.communetest.Anem))]
+                            [_vm._v(_vm._s(_vm.candidate.Anem))]
                           )
                         ])
                       ])
@@ -38512,8 +38398,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("رقم الهاتف")]),
         _vm._v(" "),
         _c("th", [_vm._v("تاريخ الإزدياد")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("مكان الازدياد")]),
         _vm._v(" "),
         _c("th", [_vm._v("مكان الإقامة الحالية")]),
         _vm._v(" "),

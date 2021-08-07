@@ -34,7 +34,6 @@
                                 <th>اسم و اللقب</th>
                                 <th>رقم الهاتف</th>
                                 <th>تاريخ الإزدياد</th>
-                                <th>مكان الازدياد</th>
                                 <th>مكان الإقامة الحالية</th>
                                 <th>مكتب التشغيل</th>
                                 <th>التخصص</th>
@@ -47,7 +46,6 @@
                                 <td>{{ candidate.name }}</td>
                                 <td>{{ candidate.phone }}</td>
                                 <td>{{ candidate.birthday }}</td>
-                                <td>{{ candidate.birthplace }}</td>
                                 <td>{{ candidate.residence }}</td>
                                 <td>{{ candidate.Anem }}</td>
                                 <td>{{ candidate.field }}</td>
@@ -120,12 +118,6 @@
                                                    class="text-red ">{{ candidate.birthday }} </label>
                                         </div>
                                         <div class="col">
-                                            <label data-error="wrong" data-success="right" class="text-uppercase">مكان
-                                                الازدياد : </label>
-                                            <label data-error="wrong" data-success="right" class="text-red ">
-                                                {{ candidate.birthplace }}</label>
-                                        </div>
-                                        <div class="col">
                                             <label data-error="wrong" data-success="right" class="text-uppercase">نسخة
                                                 من بطاقة التعريف : </label>
                                             <img class="card-img-top zoom " width="200" height="200"
@@ -137,46 +129,34 @@
                             <hr style="border-top: 1px solid #d3d3d7; width:40%">
 
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <label data-error="wrong" data-success="right" class="text-uppercase">التخصص
                                         : </label>
                                     <label data-error="wrong" data-success="right"
                                            class="text-red ">{{ candidate.field }}</label>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <label data-error="wrong" data-success="right" class="text-uppercase">المستوى
                                         الدراسي : </label>
                                     <label data-error="wrong" data-success="right"
-                                           class="text-red ">{{ communetest.Study_level }}</label>
-                                </div>
-                                <div class="col-md-4">
-                                    <label data-error="wrong" data-success="right" class="text-uppercase">نسخة من
-                                        الشهادة\ الديبلوم : </label>
-                                    <img class="card-img-top zoom" width="200" height="200"
-                                         :src="Certificate(candidate)" alt="Card image cap">
+                                           class="text-red ">{{ candidate.Study_level }}</label>
                                 </div>
 
                             </div>
                             <hr style="border-top: 1px solid #d3d3d7; width:40%">
 
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <label data-error="wrong" data-success="right" class="text-uppercase">مكان الإقامة
                                         الحالية : </label>
                                     <label data-error="wrong" data-success="right"
                                            class="text-red ">{{ candidate.residence }}</label>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <label data-error="wrong" data-success="right" class="text-uppercase">البلدية
                                         : </label>
                                     <label data-error="wrong" data-success="right"
                                            class="text-red ">{{ communetest.arabic_name }}</label>
-                                </div>
-                                <div class="col-md-4">
-                                    <label data-error="wrong" data-success="right" class="text-uppercase">نسخة من فاتورة
-                                        الكهرباء\ الماء : </label>
-                                    <img class="card-img-top zoom" width="200" height="200"
-                                         :src="Electricity_bill(candidate)" alt="Card image cap">
                                 </div>
 
                             </div>
@@ -187,12 +167,12 @@
                                     <label data-error="wrong" data-success="right" class="text-uppercase">رقم الوسيط
                                         : </label>
                                     <label data-error="wrong" data-success="right"
-                                           class="text-red ">{{ communetest.wassit }}</label>
+                                           class="text-red ">{{ candidate.wassit }}</label>
                                     <br>
                                     <label data-error="wrong" data-success="right" class="text-uppercase">فرع مكتب
                                         التشغيل : </label>
                                     <label data-error="wrong" data-success="right"
-                                           class="text-red ">{{ communetest.Anem }}</label>
+                                           class="text-red ">{{ candidate.Anem }}</label>
                                 </div>
                             </div>
 
@@ -221,7 +201,6 @@ export default {
                 email: '',
                 phone: '',
                 birthday: '',
-                birthplace: '',
                 residence: '',
                 verification_card: '',
                 commune: '',

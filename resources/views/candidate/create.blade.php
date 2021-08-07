@@ -38,7 +38,47 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Content Header (Page header) -->
 
         <!-- /.content-header -->
+        <!-- Trigger the modal with a button -->
 
+        <!-- Modal -->
+        <div id="Electricity_bill" class="modal fade " role="dialog" style="direction: rtl">
+            <div class="modal-dialog modal-dialog-centered  ">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-right">لماذا نسخة من فاتورة الكهرباء\ الماء</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="Certificate" class="modal fade " role="dialog" style="direction: rtl">
+            <div class="modal-dialog modal-dialog-centered  ">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title text-right">لماذا نسخة من الشهادة\ الديبلوم</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <!-- Main content -->
         <div class="content">
             <div class="row text-right h-100 justify-content-center align-items-center">
@@ -88,36 +128,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <div class="form-group text-right">
-                                            <label>رقم الهاتف</label>
-                                            <input type="text" name="phone"
-                                                   class="form-control @error('phone') is-invalid @enderror"
-                                                   placeholder="رقم الهاتف">
-                                            @error('phone')
-                                            <span class="invalid-feedback">
-                                       {{ $message }}
-                                    </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <!-- text input -->
-                                        <div class="form-group text-right">
-                                            <label>الايميل الخاص</label>
-                                            <input type="email"
-                                                   class="form-control @error('email') is-invalid @enderror"
-                                                   name="email"
-                                                   placeholder="الايميل الخاص">
-                                            @error('email')
-                                            <span class="invalid-feedback">
-                                       {{ $message }}
-                                    </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-4">
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>تاريخ الإزدياد</label>
@@ -133,21 +143,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <!-- textarea -->
                                         <div class="form-group text-right">
-                                            <label>مكان الازدياد</label>
-                                            <input type="text"
-                                                   class="form-control @error('birthplace') is-invalid @enderror"
-                                                   name="birthplace"
-                                                   placeholder="مكان الازدياد">
-                                            @error('birthplace')
+                                            <label>رقم الهاتف</label>
+                                            <input type="text" name="phone"
+                                                   class="form-control @error('phone') is-invalid @enderror"
+                                                   placeholder="رقم الهاتف">
+                                            @error('phone')
                                             <span class="invalid-feedback">
                                        {{ $message }}
                                     </span>
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <!-- text input -->
+                                        <div class="form-group text-right">
+                                            <label>الايميل الخاص</label>
+                                            <input type="email"
+                                                   class="form-control @error('email') is-invalid @enderror"
+                                                   name="email"
+                                                   placeholder="الايميل الخاص">
+                                            @error('email')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>نسخة من بطاقة التعريف </label>
@@ -192,13 +218,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>نسخة من فاتورة الكهرباء\ الماء</label>
-                                            <input type="file" name="Electricity_bill"
-                                                   class="form-control @error('Electricity_bill') is-invalid @enderror">
-                                            @error('Electricity_bill')
-                                            <span class="invalid-feedback">
-                                       {{ $message }}
+                                            <span class="text-red" style="margin-right: 2%;font-weight: bold">
+
+                                     (اختياري )
+<a class="btn text-red" data-toggle="modal" data-target="#Electricity_bill"><i class="fas fa-info-circle"></i></a>
                                     </span>
-                                            @enderror
+                                            <input type="file" name="Electricity_bill"
+                                                   class="form-control ">
+
                                         </div>
                                     </div>
                                 </div>
@@ -293,10 +320,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </div>
                                     <div class="col-sm-4 text-right">
                                         <!-- radio -->
-                                        <label class="">المستوى الدراسي</label> <span class="text-red" style="margin-right: 8%;font-weight: bold">
-                                            <blode>
+                                        <label class="">المستوى الدراسي</label> <span class="text-red"
+                                                                                      style="margin-right: 8%;font-weight: bold">
+
                                      عليك باختيار مستواك الدراسي.
-                                                </blode>
+
                                     </span>
                                         <div
                                             class="form-group row text-right @error('Study_level') is-invalid @enderror "
@@ -329,13 +357,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <!-- textarea -->
                                         <div class="form-group text-right ">
                                             <label>نسخة من الشهادة\ الديبلوم</label>
-                                            <input type="file" name="Certificate"
-                                                   class="form-control @error('Certificate') is-invalid @enderror">
-                                            @error('Certificate')
-                                            <span class="invalid-feedback">
-                                       {{ $message }}
+                                            <span class="text-red" style="margin-right: 2%;font-weight: bold">
+
+                                     (اختياري )
+<a class="btn text-red" data-toggle="modal" data-target="#Certificate"><i class="fas fa-info-circle"></i></a>
                                     </span>
-                                            @enderror
+                                            <input type="file" name="Certificate"
+                                                   class="form-control ">
                                         </div>
                                     </div>
                                 </div>
