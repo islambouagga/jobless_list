@@ -371,21 +371,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div class="col-sm-6">
                                         <!-- textarea -->
                                         <div class="form-group text-right">
-                                            <label>رقم الوسيط </label>
-                                            <input type="number"
-                                                   class="form-control @error('wassit') is-invalid @enderror"
-                                                   name="wassit"
-                                                   placeholder="رقم الوسيط">
-                                            @error('wassit')
-                                            <span class="invalid-feedback">
-                                       {{ $message }}
-                                    </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <!-- textarea -->
-                                        <div class="form-group text-right">
                                             <label>فرع مكتب التشغيل </label>
                                             <select class="form-control select2  @error('Anem') is-invalid @enderror"
                                                     name="Anem" style="width: 100%;">
@@ -404,6 +389,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             @enderror
                                         </div>
                                     </div>
+                                    <div class="col-sm-6">
+                                        <!-- textarea -->
+                                        <div class="form-group text-right">
+                                            <label>رقم الوسيط </label>
+                                            <input type="number"
+                                                   class="form-control @error('wassit') is-invalid @enderror"
+                                                   name="wassit"
+                                                   placeholder="رقم الوسيط">
+                                            @error('wassit')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                             <!-- /.card-body -->

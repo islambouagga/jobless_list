@@ -26,7 +26,6 @@ class CandidateController extends Controller
         foreach ($agelist as $age){
             $ageavrage =$ageavrage+ $age;
         }
-//        dd($agelist ,$ageavrage  );
         $ageavrage = $ageavrage / count($agelist);
 //        dd($agelist ,$ageavrage  );
         return Candidate::all();
@@ -64,9 +63,9 @@ class CandidateController extends Controller
     public function update(Request $request, Candidate $candidate)
     {
 //        $request->date_of_birth = "2000-10-25";
-        $age = Carbon::parse($request->birthday)->diff(Carbon::now())->y;
-
-        dd($age. " Years"); // To check result
+//        $age = Carbon::parse($request->birthday)->diff(Carbon::now())->y;
+//
+//        dd($age. " Years"); // To check result
 
 
         $candidate->statu =  $request->statu;

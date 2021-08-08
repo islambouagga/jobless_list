@@ -37871,8 +37871,6 @@ var render = function() {
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "row " }, [
-      _c("h2", [_vm._v(" age is " + _vm._s(this.ageAvvrage))]),
-      _vm._v(" "),
       _c("div", { staticClass: "col-12" }, [
         _c("div", { staticClass: "card text-right" }, [
           _c("div", { staticClass: "card-body table-responsive p-0" }, [

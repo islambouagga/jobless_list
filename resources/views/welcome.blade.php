@@ -386,21 +386,7 @@
         </div><!--End off container -->
     </section> <!--End off About section -->
 
-    <!--    <div class="container">-->
-    <!--        <div class="row">-->
-    <!--            <div class="main_featured m-top-100">-->
-    <!--                <div class="col-sm-12">-->
-    <!--                    <div class="head_title text-center">-->
-    <!--                        <h2>FEATURED WORK</h2>-->
-    <!--                        <div class="separator_auto"></div>-->
-    <!--                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
-    <!--                            sed diam nonummy nibh euismod nostrud exerci tation ullamcorper-->
-    <!--                            suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
+
 
     <div class="featured_slider">
         <div>
@@ -436,191 +422,7 @@
     </div><!-- End off featured slider -->
 
 
-    <!--    &lt;!&ndash;Service Section&ndash;&gt;-->
-    <!--    <section id="service" class="service">-->
-    <!--        <div class="container">-->
-    <!--            <div class="row">-->
-    <!--                <div class="main_service roomy-100">-->
-    <!--                    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">-->
-    <!--                        <div class="head_title text-center">-->
-    <!--                            <h2>OUR SERVICES</h2>-->
-    <!--                            <div class="separator_auto"></div>-->
-    <!--                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
-    <!--                                sed diam nonummy nibh euismod nostrud exerci tation ullamcorper-->
-    <!--                                suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
 
-    <!--                    <div class="col-md-4">-->
-    <!--                        <div class="service_item">-->
-    <!--                            <i class="icofont icofont-light-bulb"></i>-->
-    <!--                            <h6 class="m-top-30">BRANDING</h6>-->
-    <!--                            <div class="separator_small"></div>-->
-    <!--                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
-    <!--                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore-->
-    <!--                                magna aliquam erat volutpat. </p>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-md-4">-->
-    <!--                        <div class="service_item">-->
-    <!--                            <i class="icofont icofont-imac"></i>-->
-    <!--                            <h6 class="m-top-30">BRANDING</h6>-->
-    <!--                            <div class="separator_small"></div>-->
-    <!--                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
-    <!--                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore-->
-    <!--                                magna aliquam erat volutpat. </p>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-md-4">-->
-    <!--                        <div class="service_item">-->
-    <!--                            <i class="icofont icofont-video"></i>-->
-    <!--                            <h6 class="m-top-30">BRANDING</h6>-->
-    <!--                            <div class="separator_small"></div>-->
-    <!--                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
-    <!--                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore-->
-    <!--                                magna aliquam erat volutpat. </p>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>&lt;!&ndash;End off row &ndash;&gt;-->
-    <!--        </div>&lt;!&ndash;End off container &ndash;&gt;-->
-    <!--    </section> &lt;!&ndash;End off Featured section&ndash;&gt;-->
-
-
-    <!--    &lt;!&ndash;Impress section&ndash;&gt;-->
-    <!--    <section id="impress" class="impress roomy-100">-->
-    <!--        <div class="overlay"></div>-->
-    <!--        <div class="container">-->
-    <!--            <div class="row">-->
-    <!--                <div class="main_impress text-center">-->
-    <!--                    <div class="col-sm-8 col-sm-offset-2">-->
-    <!--                        <h2 class="text-white text-uppercase">Impressed? Let’s work together</h2>-->
-    <!--                        <p class="m-top-40 text-white">At vero eos et accusamus et iusto odio dignissimos ducimus qui-->
-    <!--                            ditqs praesentium-->
-    <!--                            voluptatum deleniti atque corrupti quos dolores et quas molestias</p>-->
-
-    <!--                        <div class="impress_btns m-top-30">-->
-    <!--                            <a href="" class="btn btn-primary m-top-20">HIRE US</a>-->
-    <!--                            <a href="" class="btn btn-default m-top-20">HIRE US</a>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>&lt;!&ndash;End off row &ndash;&gt;-->
-    <!--        </div>&lt;!&ndash;End off container &ndash;&gt;-->
-    <!--    </section>&lt;!&ndash; End off Impress section&ndash;&gt;-->
-
-
-    <!--    &lt;!&ndash;Portfolio Section&ndash;&gt;-->
-    <!--    <section id="portfolio" class="portfolio lightbg">-->
-    <!--        <div class="container">-->
-    <!--            <div class="row">-->
-    <!--                <div class="main_portfolio roomy-100">-->
-    <!--                    <div class="col-md-8 col-md-offset-2">-->
-    <!--                        <div class="head_title text-center">-->
-    <!--                            <h2>OUR PORTOFLIO</h2>-->
-    <!--                            <div class="separator_auto"></div>-->
-    <!--                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
-    <!--                                sed diam nonummy nibh euismod nostrud exerci tation ullamcorper-->
-    <!--                                suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-
-    <!--                    <div class="portfolio_content">-->
-    <!--                        <div class="col-md-8">-->
-    <!--                            <div class="row">-->
-    <!--                                <div class="col-md-12">-->
-    <!--                                    <div class="portfolio_item">-->
-    <!--                                        <img src="assets/images/Portfolio/2.jpg" alt=""/>-->
-    <!--                                        <div class="portfolio_hover text-center">-->
-    <!--                                            <h6 class="text-uppercase text-white">Title</h6>-->
-    <!--                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>-->
-    <!--                                            <div class="portfolio_hover_icon">-->
-    <!--                                                <a href="assets/images/Portfolio/2.jpg" class="popup-img"><i-->
-    <!--                                                        class="fa fa-expand"></i></a>-->
-    <!--                                                <a href=""><i class="fa fa-search"></i></a>-->
-    <!--                                            </div>-->
-    <!--                                        </div>-->
-    <!--                                    </div>-->
-    <!--                                </div>-->
-    <!--                                <div class="col-md-6 m-top-30">-->
-    <!--                                    <div class="portfolio_item portfolio_item2">-->
-    <!--                                        <img src="assets/images/Portfolio/3.jpg" alt=""/>-->
-    <!--                                        <div class="portfolio_hover text-center">-->
-    <!--                                            <h6 class="text-uppercase text-white">Title</h6>-->
-    <!--                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>-->
-    <!--                                            <div class="portfolio_hover_icon">-->
-    <!--                                                <a href="assets/images/Portfolio/3.jpg" class="popup-img"><i-->
-    <!--                                                        class="fa fa-expand"></i></a>-->
-    <!--                                                <a href=""><i class="fa fa-search"></i></a>-->
-    <!--                                            </div>-->
-    <!--                                        </div>-->
-    <!--                                    </div>-->
-    <!--                                </div>-->
-    <!--                                <div class="col-md-6 m-top-30">-->
-    <!--                                    <div class="portfolio_item portfolio_item2">-->
-    <!--                                        <img src="assets/images/Portfolio/5.jpg" alt=""/>-->
-    <!--                                        <div class="portfolio_hover text-center">-->
-    <!--                                            <h6 class="text-uppercase text-white">Title</h6>-->
-    <!--                                            <p class=" text-white">Lorem ipsum dolor sit amet</p>-->
-    <!--                                            <div class="portfolio_hover_icon">-->
-    <!--                                                <a href="assets/images/Portfolio/5.jpg" class="popup-img"><i-->
-    <!--                                                        class="fa fa-expand"></i></a>-->
-    <!--                                                <a href=""><i class="fa fa-search"></i></a>-->
-    <!--                                            </div>-->
-    <!--                                        </div>-->
-    <!--                                    </div>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-
-    <!--                        <div class="col-md-4">-->
-    <!--                            <div class="portfolio_item portfolio_item3 sm-m-top-30">-->
-    <!--                                <img src="assets/images/Portfolio/1.jpg" alt=""/>-->
-    <!--                                <div class="portfolio_hover text-center">-->
-    <!--                                    <h6 class="text-uppercase text-white">Title</h6>-->
-    <!--                                    <p class=" text-white">Lorem ipsum dolor sit amet</p>-->
-    <!--                                    <div class="portfolio_hover_icon">-->
-    <!--                                        <a href="assets/images/Portfolio/1.jpg" class="popup-img"><i-->
-    <!--                                                class="fa fa-expand"></i></a>-->
-    <!--                                        <a href=""><i class="fa fa-search"></i></a>-->
-    <!--                                    </div>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                        <div class="col-md-4 m-top-30">-->
-    <!--                            <div class="portfolio_item portfolio_item2">-->
-    <!--                                <img src="assets/images/Portfolio/6.jpg" alt=""/>-->
-    <!--                                <div class="portfolio_hover text-center">-->
-    <!--                                    <h6 class="text-uppercase text-white">Title</h6>-->
-    <!--                                    <p class=" text-white">Lorem ipsum dolor sit amet</p>-->
-    <!--                                    <div class="portfolio_hover_icon">-->
-    <!--                                        <a href="assets/images/Portfolio/6.jpg" class="popup-img"><i-->
-    <!--                                                class="fa fa-expand"></i></a>-->
-    <!--                                        <a href=""><i class="fa fa-search"></i></a>-->
-    <!--                                    </div>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                        <div class="col-md-8 m-top-30">-->
-    <!--                            <div class="portfolio_item">-->
-    <!--                                <img src="assets/images/Portfolio/4.jpg" alt=""/>-->
-    <!--                                <div class="portfolio_hover text-center">-->
-    <!--                                    <h6 class="text-uppercase text-white">Title</h6>-->
-    <!--                                    <p class=" text-white">Lorem ipsum dolor sit amet</p>-->
-    <!--                                    <div class="portfolio_hover_icon">-->
-    <!--                                        <a href="assets/images/Portfolio/4.jpg" class="popup-img"><i-->
-    <!--                                                class="fa fa-expand"></i></a>-->
-    <!--                                        <a href=""><i class="fa fa-search"></i></a>-->
-    <!--                                    </div>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-
-    <!--                </div>-->
-    <!--            </div>&lt;!&ndash;End off row &ndash;&gt;-->
-    <!--        </div>&lt;!&ndash;End off container &ndash;&gt;-->
-    <!--    </section>&lt;!&ndash; End off Portfolio section&ndash;&gt;-->
     <br/>
     <br/>
     <br/>
@@ -633,41 +435,19 @@
             <div class="row">
                 <div class="main_skill">
                     <div class="col-md-6">
-                        <div class="skill_content wow fadeIn">
-                            <h2>احصائيات</h2>
-                            <div class="separator_left"></div>
 
-                            <!--                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
-                            <!--                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore-->
-                            <!--                                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,-->
-                            <!--                                quis nostrud exerci tation ullamcorper suscipit lobortis-->
-                            <!--                                nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor-->
-                            <!--                                sit amet, consectetuer adipiscing elit, sed diam nonummy nibh-->
-                            <!--                                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.-->
-                            <!--                                Ut wisi enim ad minim veniam, quis nostrud exerci tation-->
-                            <!--                                ullamcorper suscipit lobortis nisl ut aliquip-->
-                            <!--                                ex ea commodo consequat. </p>-->
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <div class="skill_content wow fadeIn ">
+                            <h2>احصائيات</h2>
+
+                            <div class="separator_left " style="margin-left: 85%"></div>
+
+                            <a href="{{route('statistics')}}" class="btn btn-primary">المزيد</a>
+
 
                         </div>
                     </div>
-                    <!--                    <div class="col-md-6">-->
-                    <!--                        <div class="skill_bar sm-m-top-50">-->
-                    <!--                            <div class="teamskillbar clearfix m-top-20" data-percent="80%">-->
-                    <!--                                <h6>GRAPHIC DESIGN</h6>-->
-                    <!--                                <div class="teamskillbar-bar"></div>-->
-                    <!--                            </div> &lt;!&ndash; End Skill Bar &ndash;&gt;-->
-
-                    <!--                            <div class="teamskillbar clearfix m-top-50" data-percent="75%">-->
-                    <!--                                <h6>TYPOGRAPHY</h6>-->
-                    <!--                                <div class="teamskillbar-bar"></div>-->
-                    <!--                            </div> &lt;!&ndash; End Skill Bar &ndash;&gt;-->
-
-                    <!--                            <div class="teamskillbar clearfix m-top-50" data-percent="90%">-->
-                    <!--                                <h6>HTML / CSS</h6>-->
-                    <!--                                <div class="teamskillbar-bar"></div>-->
-                    <!--                            </div> &lt;!&ndash; End Skill Bar &ndash;&gt;-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
                 </div>
             </div><!--End off row-->
         </div><!--End off container -->
@@ -683,28 +463,29 @@
                 <div class="skill_bottom_content text-center">
                     <div class="col-md-3">
                         <div class="skill_bottom_item">
-                            <h2 class="statistic-counter">3468</h2>
+                            <h2 class="statistic-counter">{{$techCandidates}}</h2>
                             <div class="separator_small"></div>
                             <h5><em>تقني سامي</em></h5>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="skill_bottom_item">
-                            <h2 class="statistic-counter">4638</h2>
+                            <h2 class="statistic-counter">{{$lisanceCandidates}}</h2>
                             <div class="separator_small"></div>
                             <h5><em>ليسانس</em></h5>
                         </div>
                     </div>
+
                     <div class="col-md-3">
                         <div class="skill_bottom_item">
-                            <h2 class="statistic-counter">3468</h2>
+                            <h2 class="statistic-counter">{{$masterCandidates}}</h2>
                             <div class="separator_small"></div>
                             <h5><em>ماستر</em></h5>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="skill_bottom_item">
-                            <h2 class="statistic-counter">3468</h2>
+                            <h2 class="statistic-counter">{{$doctoraCandidates}}</h2>
                             <div class="separator_small"></div>
                             <h5><em>دكتوراه</em></h5>
                         </div>
@@ -713,331 +494,6 @@
             </div><!--End off row-->
         </div><!--End off container -->
     </section> <!--End off Skill section -->
-
-
-    <!--    &lt;!&ndash;Testimonial Section&ndash;&gt;-->
-    <!--    <section id="testimonial" class="testimonial fix">-->
-    <!--        <div class="overlay"></div>-->
-    <!--        <div class="container">-->
-    <!--            <div class="row">-->
-    <!--                <div class="main_testimonial roomy-100">-->
-    <!--                    <div class="head_title text-center">-->
-    <!--                        <h2 class="text-white">OUR TESTIMONIALS</h2>-->
-    <!--                    </div>-->
-    <!--                    <div class="testimonial_slid text-center">-->
-    <!--                        <div class="testimonial_item">-->
-    <!--                            <div class="col-sm-10 col-sm-offset-1">-->
-    <!--                                <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam-->
-    <!--                                    nonummy-->
-    <!--                                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.-->
-    <!--                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper-->
-    <!--                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>-->
-
-    <!--                                <div class="test_authour m-top-30">-->
-    <!--                                    <h6 class="text-white m-bottom-20">JOHN DOE - THEMEFOREST USER</h6>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                        <div class="testimonial_item">-->
-    <!--                            <div class="col-sm-10 col-sm-offset-1">-->
-    <!--                                <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam-->
-    <!--                                    nonummy-->
-    <!--                                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.-->
-    <!--                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper-->
-    <!--                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>-->
-
-    <!--                                <div class="test_authour m-top-30">-->
-    <!--                                    <h6 class="text-white m-bottom-20">JOHN DOE - THEMEFOREST USER</h6>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                        <div class="testimonial_item">-->
-    <!--                            <div class="col-sm-10 col-sm-offset-1">-->
-    <!--                                <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam-->
-    <!--                                    nonummy-->
-    <!--                                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.-->
-    <!--                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper-->
-    <!--                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>-->
-
-    <!--                                <div class="test_authour m-top-30">-->
-    <!--                                    <h6 class="text-white m-bottom-20">JOHN DOE - THEMEFOREST USER</h6>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                        <div class="testimonial_item">-->
-    <!--                            <div class="col-sm-10 col-sm-offset-1">-->
-    <!--                                <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam-->
-    <!--                                    nonummy-->
-    <!--                                    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.-->
-    <!--                                    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper-->
-    <!--                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>-->
-
-    <!--                                <div class="test_authour m-top-30">-->
-    <!--                                    <h6 class="text-white m-bottom-20">JOHN DOE - THEMEFOREST USER</h6>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                    <i class="fa fa-star"></i>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>&lt;!&ndash;End off row&ndash;&gt;-->
-    <!--        </div>&lt;!&ndash;End off container &ndash;&gt;-->
-    <!--    </section> &lt;!&ndash;End off Testimonial section &ndash;&gt;-->
-
-
-    <!--    &lt;!&ndash;Pricing Section&ndash;&gt;-->
-    <!--    <section id="pricing" class="pricing lightbg">-->
-    <!--        <div class="container">-->
-    <!--            <div class="row">-->
-    <!--                <div class="main_pricing roomy-100">-->
-    <!--                    <div class="col-md-8 col-md-offset-2 col-sm-12">-->
-    <!--                        <div class="head_title text-center">-->
-    <!--                            <h2>OUR PRICING</h2>-->
-    <!--                            <div class="separator_auto"></div>-->
-    <!--                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
-    <!--                                sed diam nonummy nibh euismod tincidunt tation ullamcorper-->
-    <!--                                suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-
-    <!--                    <div class="col-md-4 col-sm-12">-->
-    <!--                        <div class="pricing_item">-->
-    <!--                            <div class="pricing_head p-top-30 p-bottom-100 text-center">-->
-    <!--                                <h3 class="text-uppercase">STARTER</h3>-->
-    <!--                            </div>-->
-    <!--                            <div class="pricing_price_border text-center">-->
-    <!--                                <div class="pricing_price">-->
-    <!--                                    <h3 class="text-white">$19</h3>-->
-    <!--                                    <p class="text-white">per month</p>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-
-    <!--                            <div class="pricing_body bg-white p-top-110 p-bottom-60">-->
-    <!--                                <ul>-->
-    <!--                                    <li><i class="fa fa-check-circle text-primary"></i> <span>10</span> user</li>-->
-    <!--                                    <li class="disabled"><i class="fa fa-times-circle"></i> Unlimited Bandwidth</li>-->
-    <!--                                    <li class="disabled"><i class="fa fa-times-circle"></i> Full Statistics</li>-->
-
-    <!--                                </ul>-->
-    <!--                                <div class="pricing_btn text-center m-top-40">-->
-    <!--                                    <a href="" class="btn btn-primary">CHOOSE PLAN</a>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>&lt;!&ndash; End off col-md-4 &ndash;&gt;-->
-
-    <!--                    <div class="col-md-4 col-sm-12">-->
-    <!--                        <div class="pricing_item sm-m-top-30">-->
-    <!--                            <div class="pricing_top_border"></div>-->
-    <!--                            <div class="pricing_head p-top-30 p-bottom-100 text-center">-->
-    <!--                                <h3 class="text-uppercase">PREMIUM</h3>-->
-    <!--                            </div>-->
-    <!--                            <div class="pricing_price_border text-center">-->
-    <!--                                <div class="pricing_price">-->
-    <!--                                    <h3 class="text-white">$39</h3>-->
-    <!--                                    <p class="text-white">per month</p>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-
-    <!--                            <div class="pricing_body bg-white p-top-110 p-bottom-60">-->
-    <!--                                <ul>-->
-    <!--                                    <li><i class="fa fa-check-circle text-primary"></i> <span>50</span> user</li>-->
-    <!--                                    <li><i class="fa fa-check-circle text-primary"></i> Unlimited Bandwidth</li>-->
-    <!--                                    <li class="disabled"><i class="fa fa-times-circle"></i> Full Statistics</li>-->
-    <!--                                </ul>-->
-    <!--                                <div class="pricing_btn text-center m-top-40">-->
-    <!--                                    <a href="" class="btn btn-primary">CHOOSE PLAN</a>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>&lt;!&ndash; End off col-md-4 &ndash;&gt;-->
-
-    <!--                    <div class="col-md-4 col-sm-12">-->
-    <!--                        <div class="pricing_item sm-m-top-30">-->
-    <!--                            <div class="pricing_head p-top-30 p-bottom-100 text-center">-->
-    <!--                                <h3 class="text-uppercase">bUSINESS</h3>-->
-    <!--                            </div>-->
-    <!--                            <div class="pricing_price_border text-center">-->
-    <!--                                <div class="pricing_price">-->
-    <!--                                    <h3 class="text-white">$99</h3>-->
-    <!--                                    <p class="text-white">per month</p>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-
-    <!--                            <div class="pricing_body bg-white p-top-110 p-bottom-60">-->
-    <!--                                <ul>-->
-    <!--                                    <li><i class="fa fa-check-circle text-primary"></i> Unlimited Users</li>-->
-    <!--                                    <li><i class="fa fa-check-circle text-primary"></i> Unlimited Bandwidth</li>-->
-    <!--                                    <li><i class="fa fa-check-circle text-primary"></i> Full Statistics</li>-->
-    <!--                                </ul>-->
-    <!--                                <div class="pricing_btn text-center m-top-40">-->
-    <!--                                    <a href="" class="btn btn-primary">CHOOSE PLAN</a>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>&lt;!&ndash; End off col-md-4 &ndash;&gt;-->
-
-    <!--                </div>-->
-    <!--            </div>&lt;!&ndash;End off row&ndash;&gt;-->
-    <!--        </div>&lt;!&ndash;End off container &ndash;&gt;-->
-    <!--    </section> &lt;!&ndash;End off Pricing section &ndash;&gt;-->
-
-
-    <!--    &lt;!&ndash;client brand section&ndash;&gt;-->
-    <!--    <section id="cbrand" class="cbrand">-->
-    <!--        <div class="container">-->
-    <!--            <div class="row">-->
-    <!--                <div class="main_cbrand text-center roomy-100">-->
-    <!--                    <div class="col-md-2 col-sm-4 col-xs-6">-->
-    <!--                        <div class="cbrand_item m-bottom-10">-->
-    <!--                            <a href=""><img src="assets/images/clients/1.jpg" alt=""/></a>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-md-2 col-sm-4 col-xs-6">-->
-    <!--                        <div class="cbrand_item m-bottom-10">-->
-    <!--                            <a href=""><img src="assets/images/clients/2.jpg" alt=""/></a>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-md-2 col-sm-4 col-xs-6">-->
-    <!--                        <div class="cbrand_item m-bottom-10">-->
-    <!--                            <a href=""><img class="" src="assets/images/clients/5.jpg" alt=""/></a>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-md-2 col-sm-4 col-xs-6">-->
-    <!--                        <div class="cbrand_item m-bottom-10">-->
-    <!--                            <a href=""><img src="assets/images/clients/4.jpg" alt=""/></a>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-md-2 col-sm-4 col-xs-6">-->
-    <!--                        <div class="cbrand_item m-bottom-10">-->
-    <!--                            <a href=""><img src="assets/images/clients/3.jpg" alt=""/></a>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-md-2 col-sm-4 col-xs-6">-->
-    <!--                        <div class="cbrand_item m-bottom-10">-->
-    <!--                            <a href=""><img src="assets/images/clients/1.jpg" alt=""/></a>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>&lt;!&ndash; End off row &ndash;&gt;-->
-    <!--        </div>&lt;!&ndash; End off container &ndash;&gt;-->
-    <!--    </section>&lt;!&ndash; End off Cbrand section &ndash;&gt;-->
-
-
-    <!--    &lt;!&ndash;Subscribe section&ndash;&gt;-->
-    <!--    <section id="subscribe" class="subscribe roomy-100 fix">-->
-    <!--        <div class="overlay"></div>-->
-    <!--        <div class="container">-->
-    <!--            <div class="row">-->
-    <!--                <div class="main_subscribe text-center">-->
-    <!--                    <div class="col-sm-8 col-sm-offset-2">-->
-    <!--                        <h2 class="text-white">SUBSCRIBE US</h2>-->
-    <!--                        <p class="m-top-30 text-white">At vero eos et accusamus et iusto odio dignissimos-->
-    <!--                            ducimus qui blanditiis praesentium</p>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-sm-10 col-sm-offset-1">-->
-    <!--                        <div class="subscribe_btns m-top-40">-->
-
-    <!--                            <form class="form-inline">-->
-    <!--                                <div class="form-group">-->
-    <!--                                    <input type="email" class="form-control" id="inputEmail2"-->
-    <!--                                           placeholder="Email Address">-->
-    <!--                                </div>-->
-    <!--                                <button type="submit" class="btn btn-primary">SUBSCRIBE</button>-->
-    <!--                            </form>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-
-    <!--                </div>-->
-    <!--            </div>&lt;!&ndash;End off row &ndash;&gt;-->
-    <!--        </div>&lt;!&ndash;End off container &ndash;&gt;-->
-    <!--    </section>&lt;!&ndash; End off Impress section&ndash;&gt;-->
-
-
-    <!--    &lt;!&ndash;Blog Section&ndash;&gt;-->
-    <!--    <section id="blog" class="blog">-->
-    <!--        <div class="container">-->
-    <!--            <div class="row">-->
-    <!--                <div class="main_blog text-center roomy-100">-->
-    <!--                    <div class="col-sm-8 col-sm-offset-2">-->
-    <!--                        <div class="head_title text-center">-->
-    <!--                            <h2>RECENT BLOGS</h2>-->
-    <!--                            <div class="separator_auto"></div>-->
-    <!--                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
-    <!--                                sed diam nonummy nibh euismod tincidunt tation ullamcorper-->
-    <!--                                suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-md-4">-->
-    <!--                        <div class="blog_item m-top-20">-->
-    <!--                            <div class="blog_item_img">-->
-    <!--                                <img src="assets/images/Blog/1.jpg" alt=""/>-->
-    <!--                            </div>-->
-    <!--                            <div class="blog_text roomy-40">-->
-    <!--                                <h6>PLEASUARE WITHOUT CONSCIENCE</h6>-->
-    <!--                                <p><em><a href="">May 15, 2016</a> /<a href="">admin</a>/<a href=""> Co-working</a></em>-->
-    <!--                                </p>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-md-4">-->
-    <!--                        <div class="blog_item m-top-20">-->
-    <!--                            <div class="blog_item_img">-->
-    <!--                                <img src="assets/images/Blog/2.jpg" alt=""/>-->
-    <!--                            </div>-->
-    <!--                            <div class="blog_text roomy-40">-->
-    <!--                                <h6>PLEASUARE WITHOUT CONSCIENCE</h6>-->
-    <!--                                <p><em><a href="">May 15, 2016</a> /<a href="">admin</a>/<a href=""> Co-working</a></em>-->
-    <!--                                </p>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                    <div class="col-md-4">-->
-    <!--                        <div class="blog_item m-top-20">-->
-    <!--                            <div class="blog_item_img">-->
-    <!--                                <img src="assets/images/Blog/3.jpg" alt=""/>-->
-    <!--                            </div>-->
-    <!--                            <div class="blog_text roomy-40">-->
-    <!--                                <h6>PLEASUARE WITHOUT CONSCIENCE</h6>-->
-    <!--                                <p><em><a href="">May 15, 2016</a> /<a href="">admin</a>/<a href=""> Co-working</a></em>-->
-    <!--                                </p>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>&lt;!&ndash;End off row &ndash;&gt;-->
-    <!--        </div>&lt;!&ndash;End off container &ndash;&gt;-->
-    <!--    </section>&lt;!&ndash; End off Blog section&ndash;&gt;-->
-
-
-    <!--    &lt;!&ndash;Maps Section&ndash;&gt;-->
-    <!--    <div class="main_maps text-center fix">-->
-    <!--        <div class="overlay"></div>-->
-    <!--        <div class="maps_text">-->
-    <!--            <h3 class="text-white" onclick="showmap()">FIND US ON THE MAP <i class="fa fa-angle-down"></i></h3>-->
-    <!--            <div id="map_canvas" class="mapheight"></div>-->
-    <!--        </div>-->
-    <!--    </div>&lt;!&ndash; End off Maps Section&ndash;&gt;-->
-
 
     <!--Contact Us Section-->
     <section id="contact" class="contact bg-mega fix">
@@ -1048,22 +504,26 @@
                         <form class="" action="subcribe.php">
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input id="first_name" name="first_name" type="text" placeholder="اسم و اللقب"
+                                    <div class="form-group text-right">
+                                        <label class="text-right">رقم الهاتف</label>
+                                        <input id="phone" name="phone" type="text"
+                                               class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group text-right">
+                                        <label class="text-right">اسم و اللقب</label>
+                                        <input id="first_name" name="first_name" type="text"
                                                class="form-control" required="">
                                     </div>
                                 </div>
 
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input id="phone" name="phone" type="text" placeholder="رقم الهاتف"
-                                               class="form-control">
-                                    </div>
-                                </div>
+
 
                                 <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control" rows="6" placeholder=الرسالة"></textarea>
+                                    <div class="form-group text-right">
+                                        <label class="text-right">الرسالة</label>
+                                        <textarea class="form-control" rows="6" ></textarea>
                                     </div>
                                     <div class="form-group text-center">
                                         <a href="" class="btn btn-primary">ارسل رسالة</a>
@@ -1080,11 +540,6 @@
                                 <h3 class="text-white">اتصل بنا</h3>
                                 <div class="separator_small"></div>
                             </div>
-                            <!--                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
-                            <!--                                sed diam nonummy nibh euismod tincidunt ut laoreet dolore-->
-                            <!--                                magna aliquam erat volutpat. Ut wisi enim ad minim veniam,-->
-                            <!--                                quis nostrud exerci tation ullamcorper suscipit lobortis nisl-->
-                            <!--                                ut aliquip ex ea commodo consequat. </p>-->
 
                             <div class="widget_socail m-top-30">
                                 <ul class="list-inline">

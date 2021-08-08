@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="row ">
-            <h2> age is {{ this.ageAvvrage }}</h2>
+
             <div class="col-12">
                 <div class="card text-right">
                     <!-- /.card-header -->
