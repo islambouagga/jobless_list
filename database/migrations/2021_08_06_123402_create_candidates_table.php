@@ -20,6 +20,7 @@ class CreateCandidatesTable extends Migration
             $table->string('phone');
             $table->date('birthday');
             $table->string('residence');
+            $table->string('sexe');
             $table->string('verification_card');
             $table->integer('commune');
             $table->string('Electricity_bill')->nullable();

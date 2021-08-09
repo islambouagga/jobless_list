@@ -113,8 +113,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="card-body">
 
                                 @csrf
-                                <div class="row">
-                                    <div class="col-sm-4">
+                                <div class="row d-flex justify-content-around">
+                                    <div class="col-sm-3">
                                         <div class="form-group text-right">
                                             <label>اسم و اللقب</label>
                                             <input type="text" name="name"
@@ -127,7 +127,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>تاريخ الإزدياد</label>
@@ -142,7 +142,42 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-1 text-right">
+                                        <!-- radio -->
+                                        <label class="">الجنس</label>
+                                        <div
+                                            class="form-group row text-right @error('sexe') is-invalid @enderror "
+                                            style="    margin-left: 12.5%;">
+                                            <div class="custom-control custom-radio" style="    margin-left: 12.5%;">
+                                                <input checked class="custom-control-input custom-control-input-danger custom-control-input-outline " type="radio" id="customRadio1"
+                                                       value="ذكر" name="sexe">
+                                                <label for="customRadio1" class="custom-control-label">ذكر</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input class="custom-control-input custom-control-input-danger custom-control-input-outline " type="radio" id="customRadio2"
+                                                       value="انثى" name="sexe">
+                                                <label for="customRadio2" class="custom-control-label">انثى</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <!-- textarea -->
+                                        <div class="form-group text-right">
+                                            <label>نسخة من بطاقة التعريف </label>
+                                            <input type="file" name="verification_card"
+                                                   class="form-control @error('verification_card') is-invalid @enderror">
+                                            @error('verification_card')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr style="border-top: 1px solid #d3d3d7; width:40%">
+
+                                <div class="row d-flex justify-content-around">
+                                    <div class="col-sm-3">
                                         <div class="form-group text-right">
                                             <label>رقم الهاتف</label>
                                             <input type="text" name="phone"
@@ -155,10 +190,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             @enderror
                                         </div>
                                     </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-3">
                                         <!-- text input -->
                                         <div class="form-group text-right">
                                             <label>الايميل الخاص</label>
@@ -173,22 +205,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <!-- textarea -->
-                                        <div class="form-group text-right">
-                                            <label>نسخة من بطاقة التعريف </label>
-                                            <input type="file" name="verification_card"
-                                                   class="form-control @error('verification_card') is-invalid @enderror">
-                                            @error('verification_card')
-                                            <span class="invalid-feedback">
-                                       {{ $message }}
-                                    </span>
-                                            @enderror
-                                        </div>
-                                    </div>
+
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-4">
+
+                                <hr style="border-top: 1px solid #d3d3d7; width:40%">
+
+                                <div class="row  d-flex justify-content-around">
+                                    <div class="col-sm-3">
                                         <div class="form-group text-right">
                                             <label>مكان الإقامة الحالية</label>
                                             <input type="text"
@@ -202,7 +225,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <!-- select -->
                                         <div class="form-group text-right">
                                             <label>البلدية</label>
@@ -214,7 +237,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>نسخة من فاتورة الكهرباء\ الماء</label>
@@ -229,8 +252,53 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-4">
+
+                                <hr style="border-top: 1px solid #d3d3d7; width:40%">
+
+
+                                <div class="row d-flex justify-content-around">
+                                    <div class="col-sm-3">
+                                        <!-- textarea -->
+                                        <div class="form-group text-right">
+                                            <label>فرع مكتب التشغيل </label>
+                                            <select class="form-control select2  @error('Anem') is-invalid @enderror"
+                                                    name="Anem" style="width: 100%;">
+                                                <option value="ورقلة 1">ورقلة 1</option>
+                                                <option value="ورقلة 2">ورقلة 2</option>
+                                                <option value="ح.مسعود">ح.مسعود</option>
+                                                <option value="الرويسات">الرويسات</option>
+                                                <option value="س-خويلد">س-خويلد</option>
+                                                <option value="النقوسة">النقوسة</option>
+                                                <option value="البرمة">البرمة</option>
+                                            </select>
+                                            @error('Anem')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <!-- textarea -->
+                                        <div class="form-group text-right">
+                                            <label>رقم الوسيط </label>
+                                            <input type="number"
+                                                   class="form-control @error('wassit') is-invalid @enderror"
+                                                   name="wassit"
+                                                   placeholder="رقم الوسيط">
+                                            @error('wassit')
+                                            <span class="invalid-feedback">
+                                       {{ $message }}
+                                    </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <hr style="border-top: 1px solid #d3d3d7; width:40%">
+
+                                <div class="row d-flex justify-content-around">
+                                    <div class="col-sm-3">
                                         <!-- select -->
                                         <div class="form-group text-right">
                                             <label>التخصص</label>
@@ -318,7 +386,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-4 text-right">
+                                    <div class="col-sm-3 text-right">
                                         <!-- radio -->
                                         <label class="">المستوى الدراسي</label> <span class="text-red"
                                                                                       style="margin-right: 8%;font-weight: bold">
@@ -327,33 +395,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                     </span>
                                         <div
-                                            class="form-group row text-right @error('Study_level') is-invalid @enderror "
-                                            style="    margin-left: 12.5%;">
-                                            <div class="custom-control custom-radio" style="    margin-left: 12.5%;">
-                                                <input class="custom-control-input" type="radio" id="customRadio1"
+                                            class="form-group row text-right @error('Study_level') is-invalid @enderror ">
+                                            <div class="custom-control custom-radio" style="margin-left: 9.5%;">
+                                                <input class="custom-control-input custom-control-input-danger custom-control-input-outline " type="radio" id="customRadio3"
                                                        value="تقني سامي" name="Study_level">
-                                                <label for="customRadio1" class="custom-control-label">تقني سامي</label>
+                                                <label for="customRadio3" class="custom-control-label">تقني سامي</label>
                                             </div>
-                                            <div class="custom-control custom-radio" style="    margin-left: 12.5%;">
-                                                <input class="custom-control-input" type="radio" id="customRadio2"
+                                            <div class="custom-control custom-radio" style="margin-left: 9.5%;">
+                                                <input class="custom-control-input custom-control-input-danger custom-control-input-outline " type="radio" id="customRadio4"
                                                        value="ليسانس" name="Study_level">
-                                                <label for="customRadio2" class="custom-control-label">ليسانس</label>
+                                                <label for="customRadio4" class="custom-control-label">ليسانس</label>
                                             </div>
-                                            <div class="custom-control custom-radio" style="    margin-left: 12.5%;">
-                                                <input class="custom-control-input" type="radio" id="customRadio3"
+                                            <div class="custom-control custom-radio" style="margin-left: 9.5%;">
+                                                <input class="custom-control-input custom-control-input-danger custom-control-input-outline " type="radio" id="customRadio5"
                                                        value="ماستر" name="Study_level">
-                                                <label for="customRadio3" class="custom-control-label">ماستر</label>
+                                                <label for="customRadio5" class="custom-control-label">ماستر</label>
                                             </div>
-                                            <div class="custom-control custom-radio" style="margin-left: -6.5%;">
-                                                <input class="custom-control-input " type="radio"
-                                                       id="customRadio4" value="دكتوراه" name="Study_level">
-                                                <label for="customRadio4" class="custom-control-label">دكتوراه</label>
+                                            <div class="custom-control custom-radio" style="margin-left: -9.5%;">
+                                                <input class="custom-control-input custom-control-input-danger custom-control-input-outline " type="radio"
+                                                       id="customRadio6" value="دكتوراه" name="Study_level">
+                                                <label for="customRadio6" class="custom-control-label">دكتوراه</label>
                                             </div>
 
 
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-3">
                                         <!-- textarea -->
                                         <div class="form-group text-right ">
                                             <label>نسخة من الشهادة\ الديبلوم</label>
@@ -367,45 +434,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <!-- textarea -->
-                                        <div class="form-group text-right">
-                                            <label>فرع مكتب التشغيل </label>
-                                            <select class="form-control select2  @error('Anem') is-invalid @enderror"
-                                                    name="Anem" style="width: 100%;">
-                                                <option value="ورقلة 1">ورقلة 1</option>
-                                                <option value="ورقلة 2">ورقلة 2</option>
-                                                <option value="ح.مسعود">ح.مسعود</option>
-                                                <option value="الرويسات">الرويسات</option>
-                                                <option value="س-خويلد">س-خويلد</option>
-                                                <option value="النقوسة">النقوسة</option>
-                                                <option value="البرمة">البرمة</option>
-                                            </select>
-                                            @error('Anem')
-                                            <span class="invalid-feedback">
-                                       {{ $message }}
-                                    </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <!-- textarea -->
-                                        <div class="form-group text-right">
-                                            <label>رقم الوسيط </label>
-                                            <input type="number"
-                                                   class="form-control @error('wassit') is-invalid @enderror"
-                                                   name="wassit"
-                                                   placeholder="رقم الوسيط">
-                                            @error('wassit')
-                                            <span class="invalid-feedback">
-                                       {{ $message }}
-                                    </span>
-                                            @enderror
-                                        </div>
-                                    </div>
 
-                                </div>
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
