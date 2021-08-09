@@ -287,6 +287,109 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">DataTable with default features</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body" style="
+    font-weight: bold;
+    color: black;
+">
+                            <table id="example2" class="table table-bordered table-striped" style="direction: rtl; ">
+                                <thead>
+                                <tr>
+                                    <th class="text-right"> فرع مكتب التشغيل </th>
+                                    <th class="text-right">متوسط الاعمار</th>
+                                    <th class="text-right">ذكر</th>
+                                    <th class="text-right">انثى</th>
+                                    <th class="text-right">تقني سامي</th>
+                                    <th class="text-right">ليسانس</th>
+                                    <th class="text-right">ماستر</th>
+                                    <th class="text-right">دكتوراه</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>ورقلة 1</td>
+                                    <td>{{$ageavrageouargla1}}</td>
+                                    <td>{{$ouarglaman}}</td>
+                                    <td>{{$ouarglawoman}}</td>
+                                    <td>{{$ouargla11}}</td>
+                                    <td>{{$ouargla12}}</td>
+                                    <td>{{$ouargla13}}</td>
+                                    <td>{{$ouargla14}}</td>
+                                </tr>
+                                <tr>
+                                    <td>ورقلة 2</td>
+                                    <td>{{$ageavrageouargla2}}</td>
+                                    <td>{{$ouargla2man}}</td>
+                                    <td>{{$ouargla2woman}}</td>
+                                    <td>{{$ouargla21}}</td>
+                                    <td>{{$ouargla22}}</td>
+                                    <td>{{$ouargla23}}</td>
+                                    <td>{{$ouargla24}}</td>
+                                </tr>
+                                <tr>
+                                    <td>ح.مسعود</td>
+                                    <td>{{$ageavragehassi}}</td>
+                                    <td>{{$hassiman}}</td>
+                                    <td>{{$hassiwoman}}</td>
+                                    <td>{{$hassi1}}</td>
+                                    <td>{{$hassi2}}</td>
+                                    <td>{{$hassi3}}</td>
+                                    <td>{{$hassi4}}</td>
+                                </tr>
+                                <tr>
+                                    <td>الرويسات</td>
+                                    <td>{{$ageavragerwissat}}</td>
+                                    <td>{{$rwissatman}}</td>
+                                    <td>{{$rwissatwoman}}</td>
+                                    <td>{{$rwissat1}}</td>
+                                    <td>{{$rwissat2}}</td>
+                                    <td>{{$rwissat3}}</td>
+                                    <td>{{$rwissat4}}</td>
+                                </tr>
+                                <tr>
+                                    <td>س-خويلد</td>
+                                    <td>{{$ageavragesidi}}</td>
+                                    <td>{{$sidiman}}</td>
+                                    <td>{{$sidiwoman}}</td>
+                                    <td>{{$sidi1}}</td>
+                                    <td>{{$sidi2}}</td>
+                                    <td>{{$sidi3}}</td>
+                                    <td>{{$sidi4}}</td>
+                                </tr>
+                                <tr>
+                                    <td>النقوسة</td>
+                                    <td>{{$ageavragengossa}}</td>
+                                    <td>{{$ngossaman}}</td>
+                                    <td>{{$ngossawoman}}</td>
+                                    <td>{{$ngossa1}}</td>
+                                    <td>{{$ngossa2}}</td>
+                                    <td>{{$ngossa3}}</td>
+                                    <td>{{$ngossa4}}</td>
+                                </tr>
+                                <tr>
+                                    <td>البرمة</td>
+                                    <td>{{$ageavrageborma}}</td>
+                                    <td>{{$bormaman}}</td>
+                                    <td>{{$bormawoman}}</td>
+                                    <td>{{$borma1}}</td>
+                                    <td>{{$borma2}}</td>
+                                    <td>{{$borma3}}</td>
+                                    <td>{{$borma4}}</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="skill_bottom_content text-center">
                     <div class="col-md-3">
                         <div class="skill_bottom_item">
@@ -695,8 +798,6 @@
         });
     }
 </script>
-
-
 <script type="text/javascript">
     var bars_basic_element = document.getElementById('bars_basic');
     if (bars_basic_element) {

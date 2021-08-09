@@ -19,6 +19,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Select2 -->
     <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 <body class="hold-transition layout-top-nav">
 <div class="wrapper">
@@ -40,51 +42,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.content-header -->
         <!-- Trigger the modal with a button -->
 
-        <!-- Modal -->
-        <div id="Electricity_bill" class="modal fade " role="dialog" style="direction: rtl">
-            <div class="modal-dialog modal-dialog-centered  ">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title text-right">لماذا نسخة من فاتورة الكهرباء\ الماء</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the modal.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div id="Certificate" class="modal fade " role="dialog" style="direction: rtl">
-            <div class="modal-dialog modal-dialog-centered  ">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title text-right">لماذا نسخة من الشهادة\ الديبلوم</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the modal.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
         <!-- Main content -->
         <div class="content">
             <div class="row text-right h-100 justify-content-center align-items-center">
-                <div class="col-md-4">
-                    <img src="{{asset('svg/fill_form.svg')}}" width="500" height="400">
-                </div>
                 <div class="col-md-6">
                     <h1 class="text-right">استمارة</h1>
                     <p>
@@ -103,6 +63,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         وأحياناً عن عمد كإدخال بعض العبارات الفكاهية إليها.
                     </p>
                 </div>
+                <div class="col-md-4">
+                    <img src="{{asset('svg/fill_form.svg')}}" width="500" height="400">
+                </div>
+
             </div>
             <div class="row  h-100 justify-content-center align-items-center mt-5">
                 <div class="col-10">
@@ -113,7 +77,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="card-body">
 
                                 @csrf
-                                <div class="row d-flex justify-content-around">
+                                <div class="row d-flex justify-content-start">
                                     <div class="col-sm-3">
                                         <div class="form-group text-right">
                                             <label>اسم و اللقب</label>
@@ -142,20 +106,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-1 text-right">
+                                    <div style="margin-right: 2%" class="col-sm-2 text-right">
                                         <!-- radio -->
                                         <label class="">الجنس</label>
                                         <div
                                             class="form-group row text-right @error('sexe') is-invalid @enderror "
                                             style="    margin-left: 12.5%;">
                                             <div class="custom-control custom-radio" style="    margin-left: 12.5%;">
-                                                <input checked class="custom-control-input custom-control-input-danger custom-control-input-outline " type="radio" id="customRadio1"
+                                                <input checked
+                                                       class="custom-control-input custom-control-input-danger custom-control-input-outline "
+                                                       type="radio" id="customRadio1"
                                                        value="ذكر" name="sexe">
                                                 <label for="customRadio1" class="custom-control-label">ذكر</label>
                                             </div>
                                             <div class="custom-control custom-radio">
-                                                <input class="custom-control-input custom-control-input-danger custom-control-input-outline " type="radio" id="customRadio2"
-                                                       value="انثى" name="sexe">
+                                                <input
+                                                    class="custom-control-input custom-control-input-danger custom-control-input-outline "
+                                                    type="radio" id="customRadio2"
+                                                    value="انثى" name="sexe">
                                                 <label for="customRadio2" class="custom-control-label">انثى</label>
                                             </div>
                                         </div>
@@ -176,8 +144,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <hr style="border-top: 1px solid #d3d3d7; width:40%">
 
-                                <div class="row d-flex justify-content-around">
-                                    <div class="col-sm-3">
+                                <div class="row d-flex justify-content-start">
+                                    <div class="col-sm-4">
                                         <div class="form-group text-right">
                                             <label>رقم الهاتف</label>
                                             <input type="text" name="phone"
@@ -190,7 +158,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <!-- text input -->
                                         <div class="form-group text-right">
                                             <label>الايميل الخاص</label>
@@ -210,8 +178,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <hr style="border-top: 1px solid #d3d3d7; width:40%">
 
-                                <div class="row  d-flex justify-content-around">
-                                    <div class="col-sm-3">
+                                <div class="row  d-flex justify-content-start">
+                                    <div class="col-sm-4">
                                         <div class="form-group text-right">
                                             <label>مكان الإقامة الحالية</label>
                                             <input type="text"
@@ -225,7 +193,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <!-- select -->
                                         <div class="form-group text-right">
                                             <label>البلدية</label>
@@ -244,7 +212,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <span class="text-red" style="margin-right: 2%;font-weight: bold">
 
                                      (اختياري )
-<a class="btn text-red" data-toggle="modal" data-target="#Electricity_bill"><i class="fas fa-info-circle"></i></a>
+                                            <a class="btn text-red" data-toggle="modal" data-target="#Electricity_bill"><i
+                                                    class="fas fa-info-circle"></i></a>
                                     </span>
                                             <input type="file" name="Electricity_bill"
                                                    class="form-control ">
@@ -256,12 +225,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <hr style="border-top: 1px solid #d3d3d7; width:40%">
 
 
-                                <div class="row d-flex justify-content-around">
-                                    <div class="col-sm-3">
+                                <div class="row d-flex justify-content-start">
+                                    <div class="col-sm-4">
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>فرع مكتب التشغيل </label>
-                                            <select class="form-control select2  @error('Anem') is-invalid @enderror"
+                                            <select id="edit_select"
+                                                    class="form-control select2 select2-danger  @error('Anem') is-invalid @enderror"
+                                                    data-dropdown-css-class="select2-danger"
                                                     name="Anem" style="width: 100%;">
                                                 <option value="ورقلة 1">ورقلة 1</option>
                                                 <option value="ورقلة 2">ورقلة 2</option>
@@ -278,7 +249,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <!-- textarea -->
                                         <div class="form-group text-right">
                                             <label>رقم الوسيط </label>
@@ -297,13 +268,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <hr style="border-top: 1px solid #d3d3d7; width:40%">
 
-                                <div class="row d-flex justify-content-around">
-                                    <div class="col-sm-3">
+                                <div class="row d-flex justify-content-start">
+                                    <div class="col-sm-4">
                                         <!-- select -->
                                         <div class="form-group text-right">
                                             <label>التخصص</label>
-                                            <select class="form-control select2 @error('field') is-invalid @enderror "
-                                                    name="field" style="width: 100%;">
+                                            <select
+                                                class="form-control select2 select2-danger  @error('field') is-invalid @enderror"
+                                                data-dropdown-css-class="select2-danger"
+                                                name="field" style="width: 100%;">
                                                 <option selected="selected" value="الصيدلة">اختيار تخصصك</option>
                                                 <option value="الصيدلة">الصيدلة</option>
                                                 <option value="محروقات">محروقات</option>
@@ -386,7 +359,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-sm-3 text-right">
+                                    <div style="margin-right: 2%" class="col-sm-4 text-right">
                                         <!-- radio -->
                                         <label class="">المستوى الدراسي</label> <span class="text-red"
                                                                                       style="margin-right: 8%;font-weight: bold">
@@ -397,23 +370,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div
                                             class="form-group row text-right @error('Study_level') is-invalid @enderror ">
                                             <div class="custom-control custom-radio" style="margin-left: 9.5%;">
-                                                <input class="custom-control-input custom-control-input-danger custom-control-input-outline " type="radio" id="customRadio3"
-                                                       value="تقني سامي" name="Study_level">
+                                                <input
+                                                    class="custom-control-input custom-control-input-danger custom-control-input-outline "
+                                                    type="radio" id="customRadio3"
+                                                    value="تقني سامي" name="Study_level">
                                                 <label for="customRadio3" class="custom-control-label">تقني سامي</label>
                                             </div>
                                             <div class="custom-control custom-radio" style="margin-left: 9.5%;">
-                                                <input class="custom-control-input custom-control-input-danger custom-control-input-outline " type="radio" id="customRadio4"
-                                                       value="ليسانس" name="Study_level">
+                                                <input
+                                                    class="custom-control-input custom-control-input-danger custom-control-input-outline "
+                                                    type="radio" id="customRadio4"
+                                                    value="ليسانس" name="Study_level">
                                                 <label for="customRadio4" class="custom-control-label">ليسانس</label>
                                             </div>
                                             <div class="custom-control custom-radio" style="margin-left: 9.5%;">
-                                                <input class="custom-control-input custom-control-input-danger custom-control-input-outline " type="radio" id="customRadio5"
-                                                       value="ماستر" name="Study_level">
+                                                <input
+                                                    class="custom-control-input custom-control-input-danger custom-control-input-outline "
+                                                    type="radio" id="customRadio5"
+                                                    value="ماستر" name="Study_level">
                                                 <label for="customRadio5" class="custom-control-label">ماستر</label>
                                             </div>
                                             <div class="custom-control custom-radio" style="margin-left: -9.5%;">
-                                                <input class="custom-control-input custom-control-input-danger custom-control-input-outline " type="radio"
-                                                       id="customRadio6" value="دكتوراه" name="Study_level">
+                                                <input
+                                                    class="custom-control-input custom-control-input-danger custom-control-input-outline "
+                                                    type="radio"
+                                                    id="customRadio6" value="دكتوراه" name="Study_level">
                                                 <label for="customRadio6" class="custom-control-label">دكتوراه</label>
                                             </div>
 
@@ -427,7 +408,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <span class="text-red" style="margin-right: 2%;font-weight: bold">
 
                                      (اختياري )
-<a class="btn text-red" data-toggle="modal" data-target="#Certificate"><i class="fas fa-info-circle"></i></a>
+                                        <a class="btn text-red" data-toggle="modal" data-target="#Certificate"><i
+                                                class="fas fa-info-circle"></i></a>
                                     </span>
                                             <input type="file" name="Certificate"
                                                    class="form-control ">
@@ -455,20 +437,51 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     <!-- /.content-wrapper -->
 
-    <!-- Main Footer -->
-    {{--    <footer class="main-footer">--}}
-    {{--        <!-- To the right -->--}}
-    {{--        <div class="float-right d-none d-sm-inline">--}}
-    {{--            Anything you want--}}
-    {{--        </div>--}}
-    {{--        <!-- Default to the left -->--}}
-    {{--        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.--}}
-    {{--    </footer>--}}
+
+    <!-- Modal -->
+    <div id="Electricity_bill" class="modal fade " role="dialog" style="direction: rtl">
+        <div class="modal-dialog modal-dialog-centered  ">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-right">لماذا نسخة من فاتورة الكهرباء\ الماء</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="Certificate" class="modal fade " role="dialog" style="direction: rtl">
+        <div class="modal-dialog modal-dialog-centered  ">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-right">لماذا نسخة من الشهادة\ الديبلوم</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-
+@include('sweetalert::alert')
 <!-- jQuery -->
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
@@ -494,6 +507,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
         //Initialize Select2 Elements
         $('.select2bs4').select2({
             theme: 'bootstrap4'
+
+        })
+        $('#edit_select').select2({
+            theme: 'bootstrap4',
+            dropdownParent: $("edit_modal_branch"),
+            ajax: ajaxSelect2
         })
 
         //Datemask dd/mm/yyyy

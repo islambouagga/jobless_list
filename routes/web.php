@@ -29,11 +29,12 @@ Route::get('/', function () {
         ->with('masterCandidates',$masterCandidates)
         ->with('doctoraCandidates',$doctoraCandidates)
         ;
-});
+})->name('welcome');
 
 Route::get('/statistics', function (){
 
     // age avrege
+    // master
     $ageavragematser=0;
     $agelistmaster = array();
     $Candidatesmaster = Candidate::where('statu','مقبول')->where('Study_level','ماستر')->get();
@@ -47,10 +48,7 @@ Route::get('/statistics', function (){
         }
         $ageavragematser = $ageavragematser / count($agelistmaster);
     }
-
-
-
-
+    // tech
     $ageavragetech=0;
     $agelisttech = array();
     $Candidatestech = Candidate::where('statu','مقبول')->where('Study_level','تقني سامي')->get();
@@ -64,9 +62,7 @@ Route::get('/statistics', function (){
         }
         $ageavragetech = $ageavragetech / count($agelisttech);
     }
-
-
-
+    // lisance
     $ageavragelisance=0;
     $agelistlisance = array();
     $Candidateslisance = Candidate::where('statu','مقبول')->where('Study_level','ليسانس')->get();
@@ -74,15 +70,13 @@ Route::get('/statistics', function (){
         $age = Carbon::parse($Candidate->birthday)->diff(Carbon::now())->y;
         array_push($agelistlisance,$age);
     }
-//    dd(count($agelistlisance), $agelistlisance);
     if (count($agelistlisance) != null){
         foreach ($agelistlisance as $age){
             $ageavragelisance =$ageavragelisance+ $age;
         }
         $ageavragelisance = $ageavragelisance / count($agelistlisance);
     }
-
-
+    // doctora
     $ageavragedoctora=0;
     $agelistdoctora = array();
     $Candidatesdoctora = Candidate::where('statu','مقبول')->where('Study_level','دكتوراه')->get();
@@ -96,9 +90,104 @@ Route::get('/statistics', function (){
         }
         $ageavragedoctora = $ageavragedoctora / count($agelistdoctora);
     }
-
-
-
+    // ouargla 1
+    $ageavrageouargla1=0;
+    $agelistouargla1 = array();
+    $Candidatesouargla1 = Candidate::where('statu','مقبول')->where('Anem','ورقلة 1')->get();
+    foreach ($Candidatesouargla1 as $Candidate){
+        $age = Carbon::parse($Candidate->birthday)->diff(Carbon::now())->y;
+        array_push($agelistouargla1,$age);
+    }
+    if (count($agelistouargla1) != null){
+        foreach ($agelistouargla1 as $age){
+            $ageavrageouargla1 =$ageavrageouargla1+ $age;
+        }
+        $ageavrageouargla1 = $ageavrageouargla1 / count($agelistouargla1);
+    }
+    // ouargla 2
+    $ageavrageouargla2=0;
+    $agelistouargla2 = array();
+    $Candidatesouargla2 = Candidate::where('statu','مقبول')->where('Anem','ورقلة 2')->get();
+    foreach ($Candidatesouargla2 as $Candidate){
+        $age = Carbon::parse($Candidate->birthday)->diff(Carbon::now())->y;
+        array_push($agelistouargla2,$age);
+    }
+    if (count($agelistouargla2) != null){
+        foreach ($agelistouargla2 as $age){
+            $ageavrageouargla2 =$ageavrageouargla2+ $age;
+        }
+        $ageavrageouargla2 = $ageavrageouargla2 / count($agelistouargla2);
+    }
+    // hassi
+    $ageavragehassi=0;
+    $agelisthassi = array();
+    $Candidateshassi = Candidate::where('statu','مقبول')->where('Anem','ح.مسعود')->get();
+    foreach ($Candidateshassi as $Candidate){
+        $age = Carbon::parse($Candidate->birthday)->diff(Carbon::now())->y;
+        array_push($agelisthassi,$age);
+    }
+    if (count($agelisthassi) != null){
+        foreach ($agelisthassi as $age){
+            $ageavragehassi =$ageavragehassi+ $age;
+        }
+        $ageavragehassi = $ageavragehassi / count($agelisthassi);
+    }
+    // rwissat
+    $ageavragerwissat=0;
+    $agelistrwissat = array();
+    $Candidatesrwissat = Candidate::where('statu','مقبول')->where('Anem','الرويسات')->get();
+    foreach ($Candidatesrwissat as $Candidate){
+        $age = Carbon::parse($Candidate->birthday)->diff(Carbon::now())->y;
+        array_push($agelistrwissat,$age);
+    }
+    if (count($agelistrwissat) != null){
+        foreach ($agelistrwissat as $age){
+            $ageavragerwissat =$ageavragerwissat+ $age;
+        }
+        $ageavragerwissat = $ageavragerwissat / count($agelistrwissat);
+    }
+    // sidi
+    $ageavragesidi=0;
+    $agelistsidi = array();
+    $Candidatessidi = Candidate::where('statu','مقبول')->where('Anem','س-خويلد')->get();
+    foreach ($Candidatessidi as $Candidate){
+        $age = Carbon::parse($Candidate->birthday)->diff(Carbon::now())->y;
+        array_push($agelistsidi,$age);
+    }
+    if (count($agelistsidi) != null){
+        foreach ($agelistsidi as $age){
+            $ageavragesidi =$ageavragesidi+ $age;
+        }
+        $ageavragesidi = $ageavragesidi / count($agelistsidi);
+    }
+    // ngossa
+    $ageavragengossa=0;
+    $agelistngossa = array();
+    $Candidatesngossa = Candidate::where('statu','مقبول')->where('Anem','النقوسة')->get();
+    foreach ($Candidatesngossa as $Candidate){
+        $age = Carbon::parse($Candidate->birthday)->diff(Carbon::now())->y;
+        array_push($agelistngossa,$age);
+    }
+    if (count($agelistngossa) != null){
+        foreach ($agelistngossa as $age){
+            $ageavragengossa =$ageavragengossa+ $age;
+        }
+        $ageavragengossa = $ageavragengossa / count($agelistngossa);
+    }
+    // borma
+    $ageavrageborma=0;
+    $agelistborma = array();
+    $Candidatesborma = Candidate::where('statu','مقبول')->where('Anem','البرمة')->get();
+    foreach ($Candidatesborma as $Candidate){
+        $age = Carbon::parse($Candidate->birthday)->diff(Carbon::now())->y;
+        array_push($agelistborma,$age);
+    }
+    if (count($agelistborma) != null){
+        foreach ($agelistborma as $age){
+            $ageavrageborma =$ageavrageborma+ $age;
+        }
+        $ageavrageborma = $ageavrageborma / count($agelistborma);
+    }
 
 
     // Study_level
@@ -106,6 +195,7 @@ Route::get('/statistics', function (){
     $lisanceCandidates = count(Candidate::where('statu','مقبول')->where('Study_level','ليسانس')->get());
     $masterCandidates = count(Candidate::where('statu','مقبول')->where('Study_level','ماستر')->get());
     $doctoraCandidates = count(Candidate::where('statu','مقبول')->where('Study_level','دكتوراه')->get());
+
 
     // field
     // الصيدلة
@@ -128,36 +218,57 @@ Route::get('/statistics', function (){
     $ouargla12 = count(Candidate::where('statu','مقبول')->where('Study_level','ليسانس')->where('Anem','ورقلة 1')->get());
     $ouargla13 = count(Candidate::where('statu','مقبول')->where('Study_level','ماستر')->where('Anem','ورقلة 1')->get());
     $ouargla14 = count(Candidate::where('statu','مقبول')->where('Study_level','دكتوراه')->where('Anem','ورقلة 1')->get());
+    // sex
+    $ouarglaman = count(Candidate::where('statu','مقبول')->where('sexe','ذكر')->where('Anem','ورقلة 1')->get());
+    $ouarglawoman = count(Candidate::where('statu','مقبول')->where('sexe','انثى')->where('Anem','ورقلة 1')->get());
     //ouargla2
     $ouargla21 = count(Candidate::where('statu','مقبول')->where('Study_level','تقني سامي')->where('Anem','ورقلة 2')->get());
     $ouargla22 = count(Candidate::where('statu','مقبول')->where('Study_level','ليسانس')->where('Anem','ورقلة 2')->get());
     $ouargla23 = count(Candidate::where('statu','مقبول')->where('Study_level','ماستر')->where('Anem','ورقلة 2')->get());
     $ouargla24 = count(Candidate::where('statu','مقبول')->where('Study_level','دكتوراه')->where('Anem','ورقلة 2')->get());
+    // sex
+    $ouargla2man = count(Candidate::where('statu','مقبول')->where('sexe','ذكر')->where('Anem','ورقلة 2')->get());
+    $ouargla2woman = count(Candidate::where('statu','مقبول')->where('sexe','انثى')->where('Anem','ورقلة 2')->get());
     //hassi
     $hassi1 = count(Candidate::where('statu','مقبول')->where('Study_level','تقني سامي')->where('Anem','ح.مسعود')->get());
     $hassi2 = count(Candidate::where('statu','مقبول')->where('Study_level','ليسانس')->where('Anem','ح.مسعود')->get());
     $hassi3 = count(Candidate::where('statu','مقبول')->where('Study_level','ماستر')->where('Anem','ح.مسعود')->get());
     $hassi4 = count(Candidate::where('statu','مقبول')->where('Study_level','دكتوراه')->where('Anem','ح.مسعود')->get());
+    // sex
+    $hassiman = count(Candidate::where('statu','مقبول')->where('sexe','ذكر')->where('Anem','ح.مسعود')->get());
+    $hassiwoman = count(Candidate::where('statu','مقبول')->where('sexe','انثى')->where('Anem','ح.مسعود')->get());
     //rwissat
     $rwissat1 = count(Candidate::where('statu','مقبول')->where('Study_level','تقني سامي')->where('Anem','الرويسات')->get());
     $rwissat2 = count(Candidate::where('statu','مقبول')->where('Study_level','ليسانس')->where('Anem','الرويسات')->get());
     $rwissat3 = count(Candidate::where('statu','مقبول')->where('Study_level','ماستر')->where('Anem','الرويسات')->get());
     $rwissat4 = count(Candidate::where('statu','مقبول')->where('Study_level','دكتوراه')->where('Anem','الرويسات')->get());
+    // sex
+    $rwissatman = count(Candidate::where('statu','مقبول')->where('sexe','ذكر')->where('Anem','الرويسات')->get());
+    $rwissatwoman = count(Candidate::where('statu','مقبول')->where('sexe','انثى')->where('Anem','الرويسات')->get());
     //sidi
     $sidi1 = count(Candidate::where('statu','مقبول')->where('Study_level','تقني سامي')->where('Anem','س-خويلد')->get());
     $sidi2 = count(Candidate::where('statu','مقبول')->where('Study_level','ليسانس')->where('Anem','س-خويلد')->get());
     $sidi3 = count(Candidate::where('statu','مقبول')->where('Study_level','ماستر')->where('Anem','س-خويلد')->get());
     $sidi4 = count(Candidate::where('statu','مقبول')->where('Study_level','دكتوراه')->where('Anem','س-خويلد')->get());
+    // sex
+    $sidiman = count(Candidate::where('statu','مقبول')->where('sexe','ذكر')->where('Anem','س-خويلد')->get());
+    $sidiwoman = count(Candidate::where('statu','مقبول')->where('sexe','انثى')->where('Anem','س-خويلد')->get());
     //ngossa
     $ngossa1 = count(Candidate::where('statu','مقبول')->where('Study_level','تقني سامي')->where('Anem','النقوسة')->get());
     $ngossa2 = count(Candidate::where('statu','مقبول')->where('Study_level','ليسانس')->where('Anem','النقوسة')->get());
     $ngossa3 = count(Candidate::where('statu','مقبول')->where('Study_level','ماستر')->where('Anem','النقوسة')->get());
     $ngossa4 = count(Candidate::where('statu','مقبول')->where('Study_level','دكتوراه')->where('Anem','النقوسة')->get());
+    // sex
+    $ngossaman = count(Candidate::where('statu','مقبول')->where('sexe','ذكر')->where('Anem','النقوسة')->get());
+    $ngossawoman = count(Candidate::where('statu','مقبول')->where('sexe','انثى')->where('Anem','النقوسة')->get());
     //borma
     $borma1 = count(Candidate::where('statu','مقبول')->where('Study_level','تقني سامي')->where('Anem','البرمة')->get());
     $borma2 = count(Candidate::where('statu','مقبول')->where('Study_level','ليسانس')->where('Anem','البرمة')->get());
     $borma3 = count(Candidate::where('statu','مقبول')->where('Study_level','ماستر')->where('Anem','البرمة')->get());
     $borma4 = count(Candidate::where('statu','مقبول')->where('Study_level','دكتوراه')->where('Anem','البرمة')->get());
+    // sex
+    $bormaman = count(Candidate::where('statu','مقبول')->where('sexe','ذكر')->where('Anem','البرمة')->get());
+    $bormawoman = count(Candidate::where('statu','مقبول')->where('sexe','انثى')->where('Anem','البرمة')->get());
 
 
 
@@ -170,6 +281,13 @@ Route::get('/statistics', function (){
                 ->with('ageavragetech',$ageavragetech)
                 ->with('ageavragelisance',$ageavragelisance)
                 ->with('ageavragedoctora',$ageavragedoctora)
+                ->with('ageavrageouargla1',$ageavrageouargla1)
+                ->with('ageavrageouargla2',$ageavrageouargla2)
+                ->with('ageavragehassi',$ageavragehassi)
+                ->with('ageavragerwissat',$ageavragerwissat)
+                ->with('ageavragesidi',$ageavragesidi)
+                ->with('ageavragengossa',$ageavragengossa)
+                ->with('ageavrageborma',$ageavrageborma)
                 //Study_level
                 ->with('techCandidates',$techCandidates)
                 ->with('lisanceCandidates',$lisanceCandidates)
@@ -224,6 +342,21 @@ Route::get('/statistics', function (){
                 ->with('borma2',$borma2)
                 ->with('borma3',$borma3)
                 ->with('borma4',$borma4)
+                //sex
+                ->with('ouarglaman',$ouarglaman)
+                ->with('ouarglawoman',$ouarglawoman)
+                ->with('ouargla2man',$ouargla2man)
+                ->with('ouargla2woman',$ouargla2woman)
+                ->with('hassiman',$hassiman)
+                ->with('hassiwoman',$hassiwoman)
+                ->with('rwissatman',$rwissatman)
+                ->with('rwissatwoman',$rwissatwoman)
+                ->with('sidiman',$sidiman)
+                ->with('sidiwoman',$sidiwoman)
+                ->with('ngossaman',$ngossaman)
+                ->with('ngossawoman',$ngossawoman)
+                ->with('bormaman',$bormaman)
+                ->with('bormawoman',$bormawoman)
                 ;
 })->name('statistics');
 

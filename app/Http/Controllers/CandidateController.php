@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Candidate;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CandidateController extends Controller
 {
@@ -88,6 +89,8 @@ class CandidateController extends Controller
         }
 
         Candidate::create($input);
+
+        Alert::success('تمت العملية', 'لقد تم تسجيلك في المنصة');
         return redirect()->route('candidate.create');
 
     }
