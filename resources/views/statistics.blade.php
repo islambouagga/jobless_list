@@ -115,9 +115,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li><a href="#hello">مرحبا</a></li>
-                    <li><a href="#about">من نحن</a></li>
-                    <li><a href="#contact">اتصل بنا</a></li>
+                    <li><a href="/">مرحبا</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>
@@ -138,7 +136,7 @@
                     </div>
 
                     <div class="home_btns m-top-40" style="text-align:right;">
-                        <a href="{{route('candidate.create')}}" class="btn btn-primary m-top-20">الولوج الى
+                        <a href="{{route('candidate.create')}}" class="btn btn-primary m-top-20" style="color: #fff;background-color: #ff6863;border: 1px solid;border-color: #ff6863;padding: 1rem 2rem;">الولوج الى
                             استمارة</a>
 
                     </div>
@@ -168,25 +166,15 @@
                 </div>
             </div><!--End off row-->
         </div><!--End off container -->
-        <br/>
-        <br/>
-        <br/>
-        <hr/>
-        <br/>
-        <br/>
-        <br/>
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">DataTable with default features</h3>
+                            <h3 class="card-title text-right">DataTable with default features</h3>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body" style="
-    font-weight: bold;
-    color: black;
-">
+                        <div class="card-body" style="font-weight: bold;color: black;">
                             <table id="example1" class="table table-bordered table-striped" style="direction: rtl; ">
                                 <thead>
                                 <tr>
@@ -220,10 +208,7 @@
                             <h3 class="card-title">DataTable with default features</h3>
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body" style="
-    font-weight: bold;
-    color: black;
-">
+                        <div class="card-body" style="font-weight: bold;color: black;">
                             <table id="example2" class="table table-bordered table-striped" style="direction: rtl; ">
                                 <thead>
                                 <tr>
@@ -297,7 +282,7 @@
     font-weight: bold;
     color: black;
 ">
-                            <table id="example2" class="table table-bordered table-striped" style="direction: rtl; ">
+                            <table id="example3" class="table table-bordered table-striped" style="direction: rtl; ">
                                 <thead>
                                 <tr>
                                     <th class="text-right"> فرع مكتب التشغيل </th>
@@ -648,6 +633,29 @@
             "responsive": true, "lengthChange": false, "autoWidth": false, "sLengthMenu": false,
             "buttons": [ "excel", ]
         }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+        $("#example3").DataTable({
+            "language": {
+
+                "emptyTable": "No data available in table",
+                "info": "إظهار _START_ إلى _END_ من أصل _TOTAL_ مُدخل",
+                "infoEmpty": "يعرض 0 إلى 0 من أصل 0 سجلّ",
+                "infoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu":  "أظهر مُدخلات _MENU_",
+                "loadingRecords": "جاري التحميل...",
+                "processing": "جاري التحميل...",
+                "search": "ابحث:",
+                "paginate": {
+                    "first": "الأول",
+                    "last": "الأخير",
+                    "next": "التالي",
+                    "previous": "السابق",
+                }
+            },
+            "responsive": true, "lengthChange": false, "autoWidth": false, "sLengthMenu": false,
+            "buttons": [ "excel", ]
+        }).buttons().container().appendTo('#example3_wrapper .col-md-6:eq(0)');
 
     });
 </script>
