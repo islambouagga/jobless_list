@@ -25,11 +25,16 @@ class Candidate extends Model
         'verification_card',
         'commune',
         'Electricity_bill',
-        'field',
+        'feild_id',
         'Study_level',
         'Certificate',
         'wassit',
         'Anem',
         'statu',
     ];
+
+
+    public function field(){
+        return $this->belongsTo(Feild::class,'feild_id');
+    }
 }

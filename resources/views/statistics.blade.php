@@ -171,7 +171,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title text-right">DataTable with default features</h3>
+                            <h1 class="card-title text-right">جدول يوضح التخصصات و عدد شهادات حسب المستوى الدراسي</h1>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body" style="font-weight: bold;color: black;">
@@ -186,14 +186,16 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($fields as $field)
                                 <tr>
-                                    <td>الصيدلة</td>
-                                    <td>{{$الصيدلة1}}</td>
-                                    <td>{{$الصيدلة2}}</td>
-                                    <td>{{$الصيدلة3}}</td>
-                                    <td>{{$الصيدلة4}}</td>
-                                </tr>
+                                    <td>{{$field->title}}</td>
+                                    <td>{{count($field->candidates->where('Study_level', 'تقني سامي'))}}</td>
+                                    <td>{{count($field->candidates->where('Study_level', 'ليسانس'))}}</td>
+                                    <td>{{count($field->candidates->where('Study_level', 'ماستر'))}}</td>
+                                    <td>{{count($field->candidates->where('Study_level', 'دكتوراه'))}}</td>
 
+                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -201,81 +203,12 @@
                     </div>
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">DataTable with default features</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body" style="font-weight: bold;color: black;">
-                            <table id="example2" class="table table-bordered table-striped" style="direction: rtl; ">
-                                <thead>
-                                <tr>
-                                    <th class="text-right">المستوى الدراسي / فرع مكتب التشغيل </th>
-                                    <th>ورقلة 1</th>
-                                    <th>ورقلة 2</th>
-                                    <th>ح.مسعود</th>
-                                    <th>الرويسات</th>
-                                    <th>س-خويلد</th>
-                                    <th>النقوسة</th>
-                                    <th>البرمة</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>تقني سامي</td>
-                                    <td>{{$ouargla11}}</td>
-                                    <td>{{$ouargla21}}</td>
-                                    <td>{{$hassi1}}</td>
-                                    <td>{{$rwissat1}}</td>
-                                    <td>{{$sidi1}}</td>
-                                    <td>{{$ngossa1}}</td>
-                                    <td>{{$borma1}}</td>
-                                </tr>
-                                <tr>
-                                    <td>ليسانس</td>
-                                    <td>{{$ouargla12}}</td>
-                                    <td>{{$ouargla22}}</td>
-                                    <td>{{$hassi2}}</td>
-                                    <td>{{$rwissat2}}</td>
-                                    <td>{{$sidi2}}</td>
-                                    <td>{{$ngossa2}}</td>
-                                    <td>{{$borma2}}</td>
-                                </tr>
-                                <tr>
-                                    <td>ماستر</td>
-                                    <td>{{$ouargla13}}</td>
-                                    <td>{{$ouargla23}}</td>
-                                    <td>{{$hassi3}}</td>
-                                    <td>{{$rwissat3}}</td>
-                                    <td>{{$sidi3}}</td>
-                                    <td>{{$ngossa3}}</td>
-                                    <td>{{$borma3}}</td>
-                                </tr>
-                                <tr>
-                                    <td>دكتوراه</td>
-                                    <td>{{$ouargla14}}</td>
-                                    <td>{{$ouargla24}}</td>
-                                    <td>{{$hassi4}}</td>
-                                    <td>{{$rwissat4}}</td>
-                                    <td>{{$sidi4}}</td>
-                                    <td>{{$ngossa4}}</td>
-                                    <td>{{$borma4}}</td>
-                                </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">DataTable with default features</h3>
+                            <h1 class="card-title text-right">جدول يوضح احصائيات فروع مكاتب التشغيل </h1>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body" style="
@@ -293,6 +226,7 @@
                                     <th class="text-right">ليسانس</th>
                                     <th class="text-right">ماستر</th>
                                     <th class="text-right">دكتوراه</th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -374,79 +308,116 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="skill_bottom_content text-center">
-                    <div class="col-md-3">
-                        <div class="skill_bottom_item">
-                            <h2 class="statistic-counter">{{$techCandidates}}</h2>
-                            <div class="separator_small"></div>
-                            <h5><em>تقني سامي</em></h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="skill_bottom_item">
-                            <h2 class="statistic-counter">{{$lisanceCandidates}}</h2>
-                            <div class="separator_small"></div>
-                            <h5><em>ليسانس</em></h5>
-                        </div>
-                    </div>
+{{--            <div class="row">--}}
+{{--                <div class="skill_bottom_content text-center">--}}
+{{--                    <div class="col-md-3">--}}
+{{--                        <div class="skill_bottom_item">--}}
+{{--                            <h2 class="statistic-counter">{{$techCandidates}}</h2>--}}
+{{--                            <div class="separator_small"></div>--}}
+{{--                            <h5><em>تقني سامي</em></h5>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-md-3">--}}
+{{--                        <div class="skill_bottom_item">--}}
+{{--                            <h2 class="statistic-counter">{{$lisanceCandidates}}</h2>--}}
+{{--                            <div class="separator_small"></div>--}}
+{{--                            <h5><em>ليسانس</em></h5>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <div class="col-md-3">
-                        <div class="skill_bottom_item">
-                            <h2 class="statistic-counter">{{$masterCandidates}}</h2>
-                            <div class="separator_small"></div>
-                            <h5><em>ماستر</em></h5>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="skill_bottom_item">
-                            <h2 class="statistic-counter">{{$doctoraCandidates}}</h2>
-                            <div class="separator_small"></div>
-                            <h5><em>دكتوراه</em></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--                    <div class="col-md-3">--}}
+{{--                        <div class="skill_bottom_item">--}}
+{{--                            <h2 class="statistic-counter">{{$masterCandidates}}</h2>--}}
+{{--                            <div class="separator_small"></div>--}}
+{{--                            <h5><em>ماستر</em></h5>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-md-3">--}}
+{{--                        <div class="skill_bottom_item">--}}
+{{--                            <h2 class="statistic-counter">{{$doctoraCandidates}}</h2>--}}
+{{--                            <div class="separator_small"></div>--}}
+{{--                            <h5><em>دكتوراه</em></h5>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <div class="row">--}}
+{{--                <div class="col-md-12">--}}
+{{--                    <div class="col-xl-6" style="margin-top: 30px;">--}}
+{{--                        <div class="card">--}}
+{{--                            <div class="card-body">--}}
+{{--                                <div class="chart-container">--}}
+{{--                                    <div class="chart has-fixed-height" id="pie_basic2"></div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+            <hr>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="col-xl-6" style="margin-top: 30px;">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="chart-container">
-                                    <div class="chart has-fixed-height" id="pie_basic"></div>
+                    <h1 class="text-right">عدد الاطارات و توزيعهم على مستوى فروع مكاتب التشغيل و البلديات الولاية</h1>
+                    <div class="row">
+                        <div class="skill_bottom_content text-center">
+                            <div class="col-md-3">
+                                <div class="skill_bottom_item">
+                                    <h2 class="statistic-counter">{{$techCandidates}}</h2>
+                                    <div class="separator_small"></div>
+                                    <h5><em>تقني سامي</em></h5>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="skill_bottom_item">
+                                    <h2 class="statistic-counter">{{$lisanceCandidates}}</h2>
+                                    <div class="separator_small"></div>
+                                    <h5><em>ليسانس</em></h5>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="skill_bottom_item">
+                                    <h2 class="statistic-counter">{{$masterCandidates}}</h2>
+                                    <div class="separator_small"></div>
+                                    <h5><em>ماستر</em></h5>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="skill_bottom_item">
+                                    <h2 class="statistic-counter">{{$doctoraCandidates}}</h2>
+                                    <div class="separator_small"></div>
+                                    <h5><em>دكتوراه</em></h5>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="col-xl-6" style="margin-top: 30px;">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="chart-container">
-                                    <div class="chart has-fixed-height" id="pie_basic2"></div>
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <div >
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="chart-container">
+                                            <div class="chart has-fixed-height" id="bars_basic"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center">how to create dynamic barchart in laravel - websolutionstuff.com</h1>
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="col-xl-6">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="chart-container">
-                                        <div class="chart has-fixed-height" id="bars_basic"></div>
+                        <div class="col-md-6 ">
+                            <div >
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="chart-container">
+                                            <div class="chart has-fixed-height" id="pie_basic2"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -456,12 +427,9 @@
     </section> <!--End off Skill section -->
 
 
-    <br/>
-    <br/>
-    <br/>
+
     <hr/>
-    <br/>
-    <br/>
+
 
 
     <!--Contact Us Section-->
@@ -494,7 +462,7 @@
                                         <textarea class="form-control" rows="6"></textarea>
                                     </div>
                                     <div class="form-group text-center">
-                                        <a href="" class="btn btn-primary">ارسل رسالة</a>
+                                        <a href="" class="btn btn-primary" style="color: #fff;background-color: #ff6863;border: 1px solid;border-color: #ff6863;padding: 1rem 2rem;">ارسل رسالة</a>
                                     </div>
                                 </div>
 
@@ -663,86 +631,17 @@
 </html>
 
 
-<script type="text/javascript">
-    var pie_basic_element = document.getElementById('pie_basic');
-    if (pie_basic_element) {
-        var pie_basic = echarts.init(pie_basic_element);
-        pie_basic.setOption({
-            color: [
-                '#1abc9c','#2ecc71','#3498db','#9b59b6','#34495e',
-                '#16a085','#27ae60','#2980b9','#8e44ad','#2c3e50',
-                '#f1c40f','#e67e22','#e74c3c','#ecf0f1','#95a5a6',
-                '#f39c12','#d35400','#c0392b','#bdc3c7','#7f8c8d'
-            ],
 
-            textStyle: {
-                fontFamily: 'Roboto, Arial, Verdana, sans-serif',
-                fontSize: 13
-            },
-
-            title: {
-                text: 'Pie Chart Example',
-                left: 'center',
-                textStyle: {
-                    fontSize: 17,
-                    fontWeight: 500
-                },
-                subtextStyle: {
-                    fontSize: 12
-                }
-            },
-
-            tooltip: {
-                trigger: 'item',
-                backgroundColor: 'rgba(0,0,0,0.75)',
-                padding: [10, 15],
-                textStyle: {
-                    fontSize: 13,
-                    fontFamily: 'Roboto, sans-serif'
-                },
-                formatter: "{a} <br/>{b}: {c} ({d}%)"
-            },
-
-            legend: {
-                orient: 'horizontal',
-                bottom: '0%',
-                left: 'center',
-                data: ['Fruit', 'Vegitable','Grains'],
-                itemHeight: 8,
-                itemWidth: 8
-            },
-
-            series: [{
-                name: 'Product Type',
-                type: 'pie',
-                radius: '70%',
-                center: ['50%', '50%'],
-                itemStyle: {
-                    normal: {
-                        borderWidth: 1,
-                        borderColor: '#fff'
-                    }
-                },
-                data: [
-                    {value: {{$techCandidates}}, name: 'تقني سامي'},
-                    {value: {{$lisanceCandidates}}, name: 'ليسانس'},
-                    {value: {{$masterCandidates}}, name: 'ماستر'},
-                    {value: {{$doctoraCandidates}}, name: 'دكتوراه'}
-                ]
-            }]
-        });
-    }
-</script>
 <script type="text/javascript">
     var pie_basic2_element = document.getElementById('pie_basic2');
     if (pie_basic2_element) {
         var pie_basic2 = echarts.init(pie_basic2_element);
         pie_basic2.setOption({
             color: [
-                '#1abc9c','#2ecc71','#3498db','#9b59b6','#34495e',
-                '#16a085','#27ae60','#2980b9','#8e44ad','#2c3e50',
+                '#bdc3c7','#34495e','#3498db','#9b59b6','#2ecc71',
+                '#f39c12','#27ae60','#2980b9','#8e44ad','#2c3e50',
                 '#f1c40f','#e67e22','#e74c3c','#ecf0f1','#95a5a6',
-                '#f39c12','#d35400','#c0392b','#bdc3c7','#7f8c8d'
+                '#16a085','#d35400','#c0392b','#1abc9c','#7f8c8d'
             ],
 
             textStyle: {
@@ -751,7 +650,7 @@
             },
 
             title: {
-                text: 'Pie Chart Example',
+                text: '',
                 left: 'center',
                 textStyle: {
                     fontSize: 17,
@@ -777,7 +676,7 @@
                 orient: 'horizontal',
                 bottom: '0%',
                 left: 'center',
-                data: ['Fruit', 'Vegitable','Grains'],
+                data: ['بلدية ورقلة', 'بلدية عين البيضاء','بلدية نقوسة','بلدية حاسي مسعود','بلدية الرويسات','بلدية سيدي خويلد','بلدية البرمة','بلدية حاسي بن عبد ﷲ'],
                 itemHeight: 8,
                 itemWidth: 8
             },
@@ -794,13 +693,14 @@
                     }
                 },
                 data: [
-                    {value: {{$ouargla1}}, name:  ' مسجل في ورقلة 1 = ' +{{$ouargla1}}},
-                    {value: {{$ouargla2}}, name: 'مسجل في ورقلة 2 ='+{{$ouargla2}}},
-                    {value: {{$hassi}}, name: ' مسجل في ح.مسعود ='+{{$hassi}}},
-                    {value: {{$rwissat}}, name:  'مسجل في الرويسات = '+{{$rwissat}}},
-                    {value: {{$sidi}}, name: 'مسجل في س-خويلد ='+{{$sidi}}},
-                    {value: {{$ngossa}}, name: 'مسجل في النقوسة ='+{{$ngossa}}},
-                    {value: {{$borma}}, name: 'مسجل في البرمة ='+{{$borma}}}
+                    {value: {{$ouarglaOuargla}}, name:  ' بلدية ورقلة  = '},
+                    {value: {{$ouarglaAinBeida}}, name: ' بلدية عين البيضاء  = '},
+                    {value: {{$ouarglaNgoussa}}, name: ' بلدية نقوسة  = '},
+                    {value: {{$ouarglaHassiMessaoud}}, name:  ' بلدية حاسي مسعود  = '},
+                    {value: {{$ouarglaRouissat}}, name: ' بلدية الرويسات  = '},
+                    {value: {{$ouarglaSidiKhouiled}}, name: ' بلدية سيدي خويلد  = '},
+                    {value: {{$ouarglaElBorma}}, name: ' بلدية البرمة  = '},
+                    {value: {{$ouarglaHassiBenAbdellah}}, name: ' بلدية حاسي بن عبد ﷲ  = '},
                 ]
             }]
         });
@@ -827,7 +727,7 @@
             xAxis: [
                 {
                     type: 'category',
-                    data: ['تقني سامي', 'ليسانس','ماستر','دكتوراه'],
+                    data: ['ورقلة 1', 'ورقلة 2','ح.مسعود','الرويسات','س-خويلد','النقوسة','البرمة'],
                     axisTick: {
                         alignWithLabel: true
                     }
@@ -844,10 +744,13 @@
                     type: 'bar',
                     barWidth: '20%',
                     data: [
-                        {{$ageavragetech}},
-                        {{$ageavragelisance}},
-                        {{$ageavragematser}},
-                        {{$ageavragedoctora}},
+                        {{$ouargla1}},
+                        {{$ouargla2}},
+                        {{$hassi}},
+                        {{$rwissat}},
+                        {{$sidi}},
+                        {{$ngossa}},
+                        {{$borma}},
 
                     ]
                 }

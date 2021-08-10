@@ -24,7 +24,8 @@ class CreateCandidatesTable extends Migration
             $table->string('verification_card');
             $table->integer('commune');
             $table->string('Electricity_bill')->nullable();
-            $table->string('field');
+            $table->unsignedBigInteger('feild_id')->nullable();
+            $table->foreign('feild_id')->references('id')->on('feilds');
             $table->string('Anem');
             $table->bigInteger('wassit');
             $table->string('Study_level');

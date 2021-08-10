@@ -4,6 +4,7 @@ use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\HomeController;
 use App\Models\Candidate;
+use App\Models\Feild;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
 
@@ -195,13 +196,16 @@ Route::get('/statistics', function () {
     $masterCandidates = count(Candidate::where('statu', 'مقبول')->where('Study_level', 'ماستر')->get());
     $doctoraCandidates = count(Candidate::where('statu', 'مقبول')->where('Study_level', 'دكتوراه')->get());
 
+    //commune
+    $ouarglaOuargla = count(Candidate::where('statu', 'مقبول')->where('commune', '1089')->get());
+    $ouarglaAinBeida = count(Candidate::where('statu', 'مقبول')->where('commune', '1090')->get());
+    $ouarglaNgoussa = count(Candidate::where('statu', 'مقبول')->where('commune', '1091')->get());
+    $ouarglaHassiMessaoud = count(Candidate::where('statu', 'مقبول')->where('commune', '1092')->get());
+    $ouarglaRouissat = count(Candidate::where('statu', 'مقبول')->where('commune', '1093')->get());
+    $ouarglaSidiKhouiled = count(Candidate::where('statu', 'مقبول')->where('commune', '1099')->get());
+    $ouarglaHassiBenAbdellah = count(Candidate::where('statu', 'مقبول')->where('commune', '1100')->get());
+    $ouarglaElBorma = count(Candidate::where('statu', 'مقبول')->where('commune', '1109')->get());
 
-    // field
-    // الصيدلة
-    $الصيدلة1 = count(Candidate::where('statu', 'مقبول')->where('Study_level', 'تقني سامي')->where('field', 'الصيدلة')->get());
-    $الصيدلة2 = count(Candidate::where('statu', 'مقبول')->where('Study_level', 'ليسانس')->where('field', 'الصيدلة')->get());
-    $الصيدلة3 = count(Candidate::where('statu', 'مقبول')->where('Study_level', 'ماستر')->where('field', 'الصيدلة')->get());
-    $الصيدلة4 = count(Candidate::where('statu', 'مقبول')->where('Study_level', 'دكتوراه')->where('field', 'الصيدلة')->get());
 
 
     //Anem
@@ -289,11 +293,7 @@ Route::get('/statistics', function () {
         ->with('masterCandidates', $masterCandidates)
         ->with('doctoraCandidates', $doctoraCandidates)
         // field
-        // الصيدلة
-        ->with('الصيدلة1', $الصيدلة1)
-        ->with('الصيدلة2', $الصيدلة2)
-        ->with('الصيدلة3', $الصيدلة3)
-        ->with('الصيدلة4', $الصيدلة4)
+            ->with('fields',Feild::all())
         //Anem
         ->with('ouargla1', $ouargla1)
         ->with('ouargla2', $ouargla2)
@@ -351,7 +351,16 @@ Route::get('/statistics', function () {
         ->with('ngossaman', $ngossaman)
         ->with('ngossawoman', $ngossawoman)
         ->with('bormaman', $bormaman)
-        ->with('bormawoman', $bormawoman);
+        ->with('bormawoman', $bormawoman)
+        // communes
+        ->with('ouarglaOuargla',$ouarglaOuargla)
+        ->with('ouarglaAinBeida',$ouarglaAinBeida)
+        ->with('ouarglaNgoussa',$ouarglaNgoussa)
+        ->with('ouarglaHassiMessaoud',$ouarglaHassiMessaoud)
+        ->with('ouarglaRouissat',$ouarglaRouissat)
+        ->with('ouarglaSidiKhouiled',$ouarglaSidiKhouiled)
+        ->with('ouarglaHassiBenAbdellah',$ouarglaHassiBenAbdellah)
+        ->with('ouarglaElBorma',$ouarglaElBorma);
 })->name('statistics');
 
 Auth::routes();

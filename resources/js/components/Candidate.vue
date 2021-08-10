@@ -48,7 +48,7 @@
                                 <td>{{ candidate.birthday }}</td>
                                 <td>{{ candidate.residence }}</td>
                                 <td>{{ candidate.Anem }}</td>
-                                <td>{{ candidate.field }}</td>
+                                <td>{{ candidate.field.title }}</td>
                                 <td>{{ candidate.Study_level }}</td>
                                 <td>
                                     <a class="btn " @click="showModal(candidate)">
@@ -95,6 +95,11 @@
                                     <label data-error="wrong" data-success="right"
                                            class="text-red ">{{ candidate.name }}</label>
                                     <br>
+                                    <label data-error="wrong" data-success="right" class="text-uppercase">تاريخ
+                                        الإزدياد : </label>
+                                    <label data-error="wrong" data-success="right"
+                                           class="text-red ">{{ candidate.birthday }} </label>
+                                    <br>
                                     <label data-error="wrong" data-success="right" class="text-uppercase">رقم الهاتف
                                         :</label>
                                     <label data-error="wrong" data-success="right"
@@ -105,41 +110,34 @@
                                     <label data-error="wrong" data-success="right"
                                            class="text-red ">{{ candidate.email }}</label>
                                 </div>
-                            </div>
-                            <hr style="border-top: 1px solid #d3d3d7; width:40%">
-
-                            <div class="row">
                                 <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <label data-error="wrong" data-success="right" class="text-uppercase">تاريخ
-                                                الإزدياد : </label>
-                                            <label data-error="wrong" data-success="right"
-                                                   class="text-red ">{{ candidate.birthday }} </label>
-                                        </div>
-                                        <div class="col">
-                                            <label data-error="wrong" data-success="right" class="text-uppercase">نسخة
-                                                من بطاقة التعريف : </label>
-                                            <img class="card-img-top zoom " width="200" height="200"
-                                                 :src="verification_card(candidate)" alt="Card image cap">
-                                        </div>
-                                    </div>
+                                    <label data-error="wrong" data-success="right" class="text-uppercase">نسخة
+                                        من بطاقة التعريف : </label>
+                                    <img class="card-img-top zoom " width="200" height="200"
+                                         :src="verification_card(candidate)" alt="Card image cap">
                                 </div>
                             </div>
                             <hr style="border-top: 1px solid #d3d3d7; width:40%">
+
 
                             <div class="row">
                                 <div class="col-md-6">
                                     <label data-error="wrong" data-success="right" class="text-uppercase">التخصص
                                         : </label>
                                     <label data-error="wrong" data-success="right"
-                                           class="text-red ">{{ candidate.field }}</label>
+                                           class="text-red ">{{ candidatetest.title }}</label>
                                 </div>
                                 <div class="col-md-6">
                                     <label data-error="wrong" data-success="right" class="text-uppercase">المستوى
                                         الدراسي : </label>
                                     <label data-error="wrong" data-success="right"
                                            class="text-red ">{{ candidate.Study_level }}</label>
+                                </div>
+                                <div class="col" v-show="candidate.Certificate != null">
+                                    <label data-error="wrong" data-success="right" class="text-uppercase">نسخة من
+                                        الشهادة\ الديبلوم :</label>
+                                    <img class="card-img-top zoom " width="200" height="200"
+                                         :src="Certificate(candidate)" alt="Card image cap">
                                 </div>
 
                             </div>
@@ -157,6 +155,13 @@
                                         : </label>
                                     <label data-error="wrong" data-success="right"
                                            class="text-red ">{{ communetest.arabic_name }}</label>
+                                </div>
+
+                                <div class="col" v-show="candidate.Electricity_bill != null">
+                                    <label data-error="wrong" data-success="right" class="text-uppercase">نسخة من فاتورة
+                                        الكهرباء\ الماء : </label>
+                                    <img class="card-img-top zoom " width="200" height="200"
+                                         :src="Electricity_bill(candidate)" alt="Card image cap">
                                 </div>
 
                             </div>
@@ -195,6 +200,7 @@ export default {
             candidates: {},
             candidateslist: null,
             communetest: {},
+            candidatetest: {},
             candidate: new Form({
                 id: '',
                 name: '',
@@ -205,7 +211,7 @@ export default {
                 verification_card: '',
                 commune: '',
                 Electricity_bill: '',
-                field: '',
+                feild_id: '',
                 Study_level: '',
                 Certificate: '',
                 wassit: '',
@@ -220,10 +226,12 @@ export default {
             // console.log(candidate.commune)
             this.candidate.fill(candidate);
             axios.get('api/communes/' + candidate.commune).then(({data}) => (this.communetest = data));
+            axios.get('api/field/' + candidate.feild_id).then(({data}) => (this.candidatetest = data));
 
         },
         loadCandidates() {
-            axios.get('api/candidate').then(({data}) => (this.candidates = data));
+            axios.get('api/candidate').then(({data}) => (this.candidates = data,
+            console.log(this.candidates)));
 
         },
         acceptcandidate(candidate) {

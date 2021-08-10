@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidate;
+use App\Models\Feild;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -25,7 +26,8 @@ class CandidateController extends Controller
      */
     public function create()
     {
-        return view('candidate.create');
+
+        return view('candidate.create')->with('feilds', Feild::all());
     }
 
     /**
@@ -34,7 +36,7 @@ class CandidateController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Candidate $candidate)
     {
 //        dd($request->all());
         $request->validate([
@@ -44,7 +46,6 @@ class CandidateController extends Controller
             'birthday' => 'required',
             'residence' => 'required',
             'commune' => 'required',
-            'field' => 'required',
             'wassit' => 'required',
             'Anem' => 'required',
             'Study_level' => 'required',
@@ -59,7 +60,6 @@ class CandidateController extends Controller
                 'residence.required' => 'عليك بتعبئة مكان إقامتك الحالية.',
                 'wassit.required' => 'عليك بتعبئة رقم الوسيط.',
                 'commune.required' => 'عليك باختيار بلديتك التابع لها.',
-                'field.required' => 'عليك باختيار تخصصك.',
                 'Study_level.required' => 'عليك باختيار مستواك الدراسي.',
                 'Anem.required' => 'عليك باختيار فرع مكتب التشغيل التابع له.',
             ]);
@@ -71,24 +71,39 @@ class CandidateController extends Controller
             $destinationPath = 'files/' . $request->name;
             $verification_cardName = "verification_card ." . $verification_card->getClientOriginalExtension();
             $verification_card->move($destinationPath, $verification_cardName);
-            $input['verification_card'] = "$verification_cardName";
+            $candidate->verification_card = "$verification_cardName";
         }
 
         if ($Electricity_bill = $request->file('Electricity_bill')) {
             $destinationPath = 'files/' . $request->name;
             $Electricity_billName = "Electricity_bill ." . $Electricity_bill->getClientOriginalExtension();
             $Electricity_bill->move($destinationPath, $Electricity_billName);
-            $input['Electricity_bill'] = "$Electricity_billName";
+            $candidate->Electricity_bill = "$Electricity_billName";
         }
 
         if ($Certificate = $request->file('Certificate')) {
             $destinationPath = 'files/' . $request->name;
             $CertificateName = "Certificate ." . $Certificate->getClientOriginalExtension();
             $Certificate->move($destinationPath, $CertificateName);
-            $input['Certificate'] = "$CertificateName";
+            $candidate->Certificate = "$CertificateName";
         }
+//            dd($input);
+        $candidate->name = $request->name;
+        $candidate->birthday = $request->birthday;
+        $candidate->sexe = $request->sexe;
+        $candidate->phone = $request->phone;
+        $candidate->email = $request->email;
+        $candidate->residence = $request->residence;
+        $candidate->commune = $request->commune;
+        $candidate->Anem = $request->Anem;
+        $candidate->wassit = $request->wassit;
+        $candidate->Study_level = $request->Study_level;
 
-        Candidate::create($input);
+
+        $field = Feild::findOrFail($request->feild_id);
+        $candidate->feild_id = $field->id;
+        $candidate->field()->associate($field);
+        $candidate->save();
 
         Alert::success('تمت العملية', 'لقد تم تسجيلك في المنصة');
         return redirect()->route('candidate.create');

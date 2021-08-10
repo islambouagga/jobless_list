@@ -2050,6 +2050,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2057,6 +2062,7 @@ __webpack_require__.r(__webpack_exports__);
       candidates: {},
       candidateslist: null,
       communetest: {},
+      candidatetest: {},
       candidate: new Form({
         id: '',
         name: '',
@@ -2067,7 +2073,7 @@ __webpack_require__.r(__webpack_exports__);
         verification_card: '',
         commune: '',
         Electricity_bill: '',
-        field: '',
+        feild_id: '',
         Study_level: '',
         Certificate: '',
         wassit: '',
@@ -2087,13 +2093,17 @@ __webpack_require__.r(__webpack_exports__);
         var data = _ref.data;
         return _this.communetest = data;
       });
+      axios.get('api/field/' + candidate.feild_id).then(function (_ref2) {
+        var data = _ref2.data;
+        return _this.candidatetest = data;
+      });
     },
     loadCandidates: function loadCandidates() {
       var _this2 = this;
 
-      axios.get('api/candidate').then(function (_ref2) {
-        var data = _ref2.data;
-        return _this2.candidates = data;
+      axios.get('api/candidate').then(function (_ref3) {
+        var data = _ref3.data;
+        return _this2.candidates = data, console.log(_this2.candidates);
       });
     },
     acceptcandidate: function acceptcandidate(candidate) {
@@ -2125,8 +2135,8 @@ __webpack_require__.r(__webpack_exports__);
 
       var $ageavrage = 0;
       var agelist = [];
-      axios.get('api/candidate').then(function (_ref3) {
-        var data = _ref3.data;
+      axios.get('api/candidate').then(function (_ref4) {
+        var data = _ref4.data;
         return _this3.candidateslist = data, _this3.candidateslist.forEach(function (item) {
           console.log(item);
           var today = new Date();
@@ -37892,7 +37902,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(candidate.Anem))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(candidate.field))]),
+                        _c("td", [_vm._v(_vm._s(candidate.field.title))]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(candidate.Study_level))]),
                         _vm._v(" "),
@@ -38023,6 +38033,36 @@ var render = function() {
                             },
                             [
                               _vm._v(
+                                "تاريخ\n                                    الإزدياد : "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-red ",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.candidate.birthday) + " ")]
+                          ),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-uppercase",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [
+                              _vm._v(
                                 "رقم الهاتف\n                                    :"
                               )
                             ]
@@ -38069,77 +38109,34 @@ var render = function() {
                             },
                             [_vm._v(_vm._s(_vm.candidate.email))]
                           )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("hr", {
-                        staticStyle: {
-                          "border-top": "1px solid #d3d3d7",
-                          width: "40%"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
+                        ]),
+                        _vm._v(" "),
                         _c("div", { staticClass: "col" }, [
-                          _c("div", { staticClass: "row" }, [
-                            _c("div", { staticClass: "col" }, [
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "text-uppercase",
-                                  attrs: {
-                                    "data-error": "wrong",
-                                    "data-success": "right"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "تاريخ\n                                            الإزدياد : "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "text-red ",
-                                  attrs: {
-                                    "data-error": "wrong",
-                                    "data-success": "right"
-                                  }
-                                },
-                                [_vm._v(_vm._s(_vm.candidate.birthday) + " ")]
+                          _c(
+                            "label",
+                            {
+                              staticClass: "text-uppercase",
+                              attrs: {
+                                "data-error": "wrong",
+                                "data-success": "right"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "نسخة\n                                    من بطاقة التعريف : "
                               )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col" }, [
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "text-uppercase",
-                                  attrs: {
-                                    "data-error": "wrong",
-                                    "data-success": "right"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "نسخة\n                                            من بطاقة التعريف : "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("img", {
-                                staticClass: "card-img-top zoom ",
-                                attrs: {
-                                  width: "200",
-                                  height: "200",
-                                  src: _vm.verification_card(_vm.candidate),
-                                  alt: "Card image cap"
-                                }
-                              })
-                            ])
-                          ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("img", {
+                            staticClass: "card-img-top zoom ",
+                            attrs: {
+                              width: "200",
+                              height: "200",
+                              src: _vm.verification_card(_vm.candidate),
+                              alt: "Card image cap"
+                            }
+                          })
                         ])
                       ]),
                       _vm._v(" "),
@@ -38177,7 +38174,7 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v(_vm._s(_vm.candidate.field))]
+                            [_vm._v(_vm._s(_vm.candidatetest.title))]
                           )
                         ]),
                         _vm._v(" "),
@@ -38209,7 +38206,49 @@ var render = function() {
                             },
                             [_vm._v(_vm._s(_vm.candidate.Study_level))]
                           )
-                        ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.candidate.Certificate != null,
+                                expression: "candidate.Certificate != null"
+                              }
+                            ],
+                            staticClass: "col"
+                          },
+                          [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "text-uppercase",
+                                attrs: {
+                                  "data-error": "wrong",
+                                  "data-success": "right"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "نسخة من\n                                    الشهادة\\ الديبلوم :"
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("img", {
+                              staticClass: "card-img-top zoom ",
+                              attrs: {
+                                width: "200",
+                                height: "200",
+                                src: _vm.Certificate(_vm.candidate),
+                                alt: "Card image cap"
+                              }
+                            })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("hr", {
@@ -38278,7 +38317,49 @@ var render = function() {
                             },
                             [_vm._v(_vm._s(_vm.communetest.arabic_name))]
                           )
-                        ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            directives: [
+                              {
+                                name: "show",
+                                rawName: "v-show",
+                                value: _vm.candidate.Electricity_bill != null,
+                                expression: "candidate.Electricity_bill != null"
+                              }
+                            ],
+                            staticClass: "col"
+                          },
+                          [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "text-uppercase",
+                                attrs: {
+                                  "data-error": "wrong",
+                                  "data-success": "right"
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "نسخة من فاتورة\n                                    الكهرباء\\ الماء : "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("img", {
+                              staticClass: "card-img-top zoom ",
+                              attrs: {
+                                width: "200",
+                                height: "200",
+                                src: _vm.Electricity_bill(_vm.candidate),
+                                alt: "Card image cap"
+                              }
+                            })
+                          ]
+                        )
                       ]),
                       _vm._v(" "),
                       _c("hr", {

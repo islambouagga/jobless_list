@@ -274,85 +274,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="form-group text-right">
                                             <label>التخصص</label>
                                             <select
-                                                class="form-control select2 select2-danger  @error('field') is-invalid @enderror"
+                                                class="form-control select2 select2-danger  @error('feild_id') is-invalid @enderror"
                                                 data-dropdown-css-class="select2-danger"
-                                                name="field" style="width: 100%;">
-                                                <option selected="selected" value="الصيدلة">اختيار تخصصك</option>
-                                                <option value="الصيدلة">الصيدلة</option>
-                                                <option value="محروقات">محروقات</option>
-                                                <option value="الهندسة البيوطبية">الهندسة البيوطبية</option>
-                                                <option value="كمياء">كمياء</option>
-                                                <option value="بصريات و ميكانيك الضبط"> بصريات و ميكانيك الضبط</option>
-                                                <option value="الهندسة البحرية">الهندسة البحرية</option>
-                                                <option value="تعدين">تعدين</option>
-                                                <option value="ري">ري</option>
-                                                <option value="الطب">الطب</option>
-                                                <option value="اتصالات سلكية و لا سلكية">اتصالات سلكية و لا سلكية
-                                                </option>
-                                                <option value="جيولوجيا و محيط">جيولوجيا و محيط</option>
-                                                <option value="كهروميكانيك">كهروميكانيك</option>
-                                                <option value="علوم التمريض">علوم التمريض</option>
-                                                <option value="جيومتر طوبوغراف">جيومتر طوبوغراف</option>
-                                                <option value="مناجم">مناجم</option>
-                                                <option value="علوم فلاحية">علوم فلاحية</option>
-                                                <option value="هندسة الطرائق">هندسة الطرائق</option>
-                                                <option value="هندسة صناعية">هندسة صناعية</option>
-                                                <option value="العلوم الإسلامية">العلوم الإسلامية</option>
-                                                <option value="علوم البيطرة">علوم البيطرة</option>
-                                                <option value="علوم سياسية">علوم سياسية</option>
-                                                <option value="تكنولوجيا">تكنولوجيا</option>
-                                                <option value="حقوق">حقوق</option>
-                                                <option value="نظافة و أمن صناعي">نظافة و أمن صناعي</option>
-                                                <option value="أشغال عمومية">أشغال عمومية</option>
-                                                <option value="الطيران">الطيران</option>
-                                                <option value="طب الأسنان">طب الأسنان</option>
-                                                <option value="ميدان تكوين فنون">ميدان تكوين فنون</option>
-                                                <option value="بيولوجيا وتكنولوجيا تربية النحل">بيولوجيا وتكنولوجيا
-                                                    تربية النحل
-                                                </option>
-                                                <option value="تسيير المؤسسات و الإدارات">تسيير المؤسسات و الإدارات
-                                                </option>
-                                                <option value=" طاقات متجددة"> طاقات متجددة</option>
-                                                <option value="كهروتقني"> كهروتقني</option>
-                                                <option value="هندسة المياه">هندسة المياه</option>
-                                                <option value="هندسة المبلورات">هندسة المبلورات</option>
-                                                <option value="لغة و ثقافة أمازيغية">لغة و ثقافة أمازيغية</option>
-                                                <option value="تغذية و تكنولوجيا زراعية غذائية">تغذية و تكنولوجيا زراعية
-                                                    غذائية
-                                                </option>
-                                                <option value="الهندسة الميكانيكية">الهندسة الميكانيكية</option>
-                                                <option value="تسيير التقنيات الحضرية">تسيير التقنيات الحضرية</option>
-                                                <option value="علوم و تقنيات النشاطات البدنية و الرياضية">علوم و تقنيات
-                                                    النشاطات البدنية و الرياضية
-                                                </option>
-                                                <option value="علوم اقتصادية التسيير و ع.تجارية">علوم اقتصادية التسيير و
-                                                    ع.تجارية
-                                                </option>
-                                                <option value="علوم إنسانية">علوم إنسانية</option>
-                                                <option value="علوم الطبيعة و الحياة">علوم الطبيعة و الحياة</option>
-                                                <option value="اللغات الأجنبية">اللغات الأجنبية</option>
-                                                <option value="صناعات بتروكميائية">صناعات بتروكميائية</option>
-                                                <option value="الهندسة المعمارية و العمران">الهندسة المعمارية و
-                                                    العمران
-                                                </option>
-                                                <option value="هندسة كهربائية">هندسة كهربائية</option>
-                                                <option value="الكترونيك"> الكترونيك</option>
-                                                <option value="تغليف و جودة">تغليف و جودة</option>
-                                                <option value="علم النفس العيادي">علم النفس العيادي</option>
-                                                <option value="قيادة عملياتية للمشاريع">قيادة عملياتية للمشاريع</option>
-                                                <option value="علوم البيئة و المحيط"> علوم البيئة و المحيط</option>
-                                                <option value="علوم الغابات">علوم الغابات</option>
-                                                <option value="رياضيات">رياضيات</option>
-                                                <option value="إعلام آلي">إعلام آلي</option>
-                                                <option value="تخصص ترجمة">تخصص ترجمة</option>
-                                                <option value="علوم المادة">علوم المادة</option>
-                                                <option value="علوم اجتماعية">علوم اجتماعية</option>
-                                                <option value="علوم الأرض و الكون">علوم الأرض و الكون</option>
-                                                <option value="الهندسة المدنية">الهندسة المدنية</option>
-                                                <option value="طب الأسنان">طب الأسنان</option>
-                                                <option value="لغة و أدب عربي<">لغة و أدب عربي</option>
+                                                name="feild_id" style="width: 100%;">
+                                                @foreach($feilds as $feild)
+                                                <option  value="{{$feild->id}}">{{$feild->title}}</option>
+                                                @endforeach
                                             </select>
-                                            @error('field')
+                                            @error('feild_id')
                                             <span class="invalid-feedback">
                                        {{ $message }}
                                     </span>
@@ -420,10 +349,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-default float-right"
+                                <button type="submit" class="btn btn-default btn-lg float-right"
                                         style="background-color: #D14149; color: #ffffff">إرسال
                                 </button>
-                                <button type="button" class="btn btn-default ">إلغاء</button>
+                                <a type="button" href="/"  class="btn btn-default btn-lg ">إلغاء</a>
                             </div>
                         </form>
                     </div>

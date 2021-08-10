@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Candidate;
-use Carbon\Carbon;
+use App\Models\Feild;
 use Illuminate\Http\Request;
 
-class CandidateController extends Controller
+class FeildController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class CandidateController extends Controller
      */
     public function index()
     {
-        return Candidate::with('field')->get();
+        return Feild::all();
     }
 
     /**
@@ -33,41 +32,33 @@ class CandidateController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function show(Candidate $candidate)
+    public function show(Feild $field)
     {
-        //
+        return $field;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Candidate $candidate)
+    public function update(Request $request, Field $field)
     {
-//        $request->date_of_birth = "2000-10-25";
-//        $age = Carbon::parse($request->birthday)->diff(Carbon::now())->y;
-//
-//        dd($age. " Years"); // To check result
-
-
-        $candidate->statu =  $request->statu;
-        $candidate->save();
-        return $candidate;
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Candidate $candidate)
+    public function destroy(Field $field)
     {
         //
     }
