@@ -693,14 +693,14 @@
                     }
                 },
                 data: [
-                    {value: {{$ouarglaOuargla}}, name:  ' بلدية ورقلة  = '},
-                    {value: {{$ouarglaAinBeida}}, name: ' بلدية عين البيضاء  = '},
-                    {value: {{$ouarglaNgoussa}}, name: ' بلدية نقوسة  = '},
-                    {value: {{$ouarglaHassiMessaoud}}, name:  ' بلدية حاسي مسعود  = '},
-                    {value: {{$ouarglaRouissat}}, name: ' بلدية الرويسات  = '},
-                    {value: {{$ouarglaSidiKhouiled}}, name: ' بلدية سيدي خويلد  = '},
-                    {value: {{$ouarglaElBorma}}, name: ' بلدية البرمة  = '},
-                    {value: {{$ouarglaHassiBenAbdellah}}, name: ' بلدية حاسي بن عبد ﷲ  = '},
+                    {value: {{$ouarglaOuargla}}, name:  ' بلدية ورقلة  '},
+                    {value: {{$ouarglaAinBeida}}, name: ' بلدية عين البيضاء   '},
+                    {value: {{$ouarglaNgoussa}}, name: ' بلدية نقوسة   '},
+                    {value: {{$ouarglaHassiMessaoud}}, name:  ' بلدية حاسي مسعود   '},
+                    {value: {{$ouarglaRouissat}}, name: ' بلدية الرويسات   '},
+                    {value: {{$ouarglaSidiKhouiled}}, name: ' بلدية سيدي خويلد   '},
+                    {value: {{$ouarglaElBorma}}, name: ' بلدية البرمة   '},
+                    {value: {{$ouarglaHassiBenAbdellah}}, name: ' بلدية حاسي بن عبد ﷲ  '},
                 ]
             }]
         });

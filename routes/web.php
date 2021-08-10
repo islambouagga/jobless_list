@@ -361,7 +361,7 @@ Route::get('/statistics', function () {
         ->with('ouarglaSidiKhouiled',$ouarglaSidiKhouiled)
         ->with('ouarglaHassiBenAbdellah',$ouarglaHassiBenAbdellah)
         ->with('ouarglaElBorma',$ouarglaElBorma);
-})->name('statistics');
+})->name('statistics')->middleware('auth');
 
 Auth::routes();
 
