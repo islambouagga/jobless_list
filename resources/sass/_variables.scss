@@ -20,6 +20,7 @@ $cyan: #6cb2eb;
 $turquoise: #1abc9c;
 $sunflower :#f1c40f;
 $Electromagnetic : #2f3640;
+$black :  black;
 
 
 .blue{
@@ -60,4 +61,7 @@ $Electromagnetic : #2f3640;
 }
  .Electromagnetic{
     color: $Electromagnetic;
+}
+.black{
+    color: $black;
 }

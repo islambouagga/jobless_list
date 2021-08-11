@@ -19,7 +19,8 @@ class CreateCandidatesTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->date('birthday');
-            $table->string('residence');
+            $table->unsignedBigInteger('district_id')->nullable();
+            $table->foreign('district_id')->references('id')->on('districts');
             $table->string('sexe');
             $table->string('verification_card');
             $table->integer('commune');

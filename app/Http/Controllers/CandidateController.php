@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidate;
+use App\Models\District;
 use App\Models\Feild;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -27,7 +28,7 @@ class CandidateController extends Controller
     public function create()
     {
 
-        return view('candidate.create')->with('feilds', Feild::all());
+        return view('candidate.create')->with('feilds', Feild::all())->with('districts',District::all());
     }
 
     /**
@@ -44,7 +45,6 @@ class CandidateController extends Controller
             'phone' => 'required',
             'email' => 'required',
             'birthday' => 'required',
-            'residence' => 'required',
             'commune' => 'required',
             'wassit' => 'required',
             'Anem' => 'required',
@@ -57,7 +57,6 @@ class CandidateController extends Controller
                 'email.required' => 'عليك بتعبئة ايمايل الخاص بك.',
                 'birthday.required' => 'عليك بتعبئة تاريخ ازديادك.',
                 'verification_card.required' => 'عليك برفع صورة لبطاقة التعريف الشخصية.',
-                'residence.required' => 'عليك بتعبئة مكان إقامتك الحالية.',
                 'wassit.required' => 'عليك بتعبئة رقم الوسيط.',
                 'commune.required' => 'عليك باختيار بلديتك التابع لها.',
                 'Study_level.required' => 'عليك باختيار مستواك الدراسي.',
@@ -93,12 +92,15 @@ class CandidateController extends Controller
         $candidate->sexe = $request->sexe;
         $candidate->phone = $request->phone;
         $candidate->email = $request->email;
-        $candidate->residence = $request->residence;
         $candidate->commune = $request->commune;
         $candidate->Anem = $request->Anem;
         $candidate->wassit = $request->wassit;
         $candidate->Study_level = $request->Study_level;
 
+
+        $district = District::findOrFail($request->district_id);
+        $candidate->district_id = $district->id;
+        $candidate->district()->associate($district);
 
         $field = Feild::findOrFail($request->feild_id);
         $candidate->feild_id = $field->id;

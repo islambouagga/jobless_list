@@ -4,6 +4,7 @@ use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\HomeController;
 use App\Models\Candidate;
+use App\Models\District;
 use App\Models\Feild;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
@@ -294,6 +295,8 @@ Route::get('/statistics', function () {
         ->with('doctoraCandidates', $doctoraCandidates)
         // field
             ->with('fields',Feild::all())
+        // district
+            ->with('districts',District::all())
         //Anem
         ->with('ouargla1', $ouargla1)
         ->with('ouargla2', $ouargla2)

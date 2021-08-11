@@ -46,7 +46,7 @@
                                 <td>{{ candidate.name }}</td>
                                 <td>{{ candidate.phone }}</td>
                                 <td>{{ candidate.birthday }}</td>
-                                <td>{{ candidate.residence }}</td>
+                                <td>{{ candidate.district.name }}</td>
                                 <td>{{ candidate.Anem }}</td>
                                 <td>{{ candidate.field.title }}</td>
                                 <td>{{ candidate.Study_level }}</td>
@@ -144,13 +144,13 @@
                             <hr style="border-top: 1px solid #d3d3d7; width:40%">
 
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col">
                                     <label data-error="wrong" data-success="right" class="text-uppercase">مكان الإقامة
                                         الحالية : </label>
                                     <label data-error="wrong" data-success="right"
-                                           class="text-red ">{{ candidate.residence }}</label>
+                                           class="text-red ">{{ districttest.name }}</label>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col">
                                     <label data-error="wrong" data-success="right" class="text-uppercase">البلدية
                                         : </label>
                                     <label data-error="wrong" data-success="right"
@@ -201,13 +201,14 @@ export default {
             candidateslist: null,
             communetest: {},
             candidatetest: {},
+            districttest: {},
             candidate: new Form({
                 id: '',
                 name: '',
                 email: '',
                 phone: '',
                 birthday: '',
-                residence: '',
+                district_id: '',
                 verification_card: '',
                 commune: '',
                 Electricity_bill: '',
@@ -227,6 +228,7 @@ export default {
             this.candidate.fill(candidate);
             axios.get('api/communes/' + candidate.commune).then(({data}) => (this.communetest = data));
             axios.get('api/field/' + candidate.feild_id).then(({data}) => (this.candidatetest = data));
+            axios.get('api/district/' + candidate.district_id).then(({data}) => (this.districttest = data));
 
         },
         loadCandidates() {

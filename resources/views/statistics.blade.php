@@ -115,36 +115,19 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li><a href="/">مرحبا</a></li>
+                    <li><a style="color: black" href="/">مرحبا</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li><a style="color: black" href="/Candidate">قائمة المسجلين</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li><a style="color: black" href="{{route('statistics')}}" >احصائيات</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>
 
 
     </nav>
-
-
-    <!--Home Sections-->
-
-    <section id="hello" class="home bg-mega">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="main_home">
-                    <div class="home_text" style="text-align:right;">
-                        <h1 class="text-white"> ورقلة <br/> تنسيقية حاملي الشهادات الجامعية</h1>
-                    </div>
-
-                    <div class="home_btns m-top-40" style="text-align:right;">
-                        <a href="{{route('candidate.create')}}" class="btn btn-primary m-top-20" style="color: #fff;background-color: #ff6863;border: 1px solid;border-color: #ff6863;padding: 1rem 2rem;">الولوج الى
-                            استمارة</a>
-
-                    </div>
-
-                </div>
-            </div><!--End off row-->
-        </div><!--End off container -->
-    </section> <!--End off Home Sections-->
 
     <!--Skill Sections-->
     <section id="skill" class="skill roomy-100">
@@ -189,10 +172,10 @@
                                 @foreach($fields as $field)
                                 <tr>
                                     <td>{{$field->title}}</td>
-                                    <td>{{count($field->candidates->where('Study_level', 'تقني سامي'))}}</td>
-                                    <td>{{count($field->candidates->where('Study_level', 'ليسانس'))}}</td>
-                                    <td>{{count($field->candidates->where('Study_level', 'ماستر'))}}</td>
-                                    <td>{{count($field->candidates->where('Study_level', 'دكتوراه'))}}</td>
+                                    <td>{{count($field->candidates->where('Study_level', 'تقني سامي')->where('statu', 'مقبول'))}}</td>
+                                    <td>{{count($field->candidates->where('Study_level', 'ليسانس')->where('statu', 'مقبول'))}}</td>
+                                    <td>{{count($field->candidates->where('Study_level', 'ماستر')->where('statu', 'مقبول'))}}</td>
+                                    <td>{{count($field->candidates->where('Study_level', 'دكتوراه')->where('statu', 'مقبول'))}}</td>
 
                                 </tr>
                                 @endforeach
@@ -219,7 +202,7 @@
                                 <thead>
                                 <tr>
                                     <th class="text-right"> فرع مكتب التشغيل </th>
-                                    <th class="text-right">متوسط الاعمار</th>
+                                    <th class="text-right">متوسط العمر</th>
                                     <th class="text-right">ذكر</th>
                                     <th class="text-right">انثى</th>
                                     <th class="text-right">تقني سامي</th>
@@ -394,23 +377,25 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 ">
-                            <div >
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="chart-container">
-                                            <div class="chart has-fixed-height" id="bars_basic"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 ">
+                        <div class="col-md-12 ">
                             <div >
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="chart-container">
                                             <div class="chart has-fixed-height" id="pie_basic2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <div >
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="chart-container">
+                                            <div class="chart has-fixed-height" id="bars_basic"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -650,14 +635,14 @@
             },
 
             title: {
-                text: '',
+                text: {{$ouarglaHassiBenAbdellah}}+'  بلدية ورقلة  :'+{{$ouarglaOuargla}}+' | بلدية عين البيضاء  :'+{{$ouarglaAinBeida}}+' | بلدية نقوسة  :'+{{$ouarglaNgoussa}}+' | بلدية حاسي مسعود  :'+{{$ouarglaHassiMessaoud}}+' | بلدية الرويسات  :'+{{$ouarglaRouissat}}+' | بلدية سيدي خويلد  :'+{{$ouarglaSidiKhouiled}}+' | بلدية البرمة  :'+{{$ouarglaElBorma}}+' | بلدية حاسي بن عبد ﷲ  ',
                 left: 'center',
                 textStyle: {
                     fontSize: 17,
-                    fontWeight: 500
+                    fontWeight: 1000
                 },
                 subtextStyle: {
-                    fontSize: 12
+                    fontSize: 14
                 }
             },
 
@@ -707,11 +692,26 @@
     }
 </script>
 <script type="text/javascript">
+
+
+
+    var districtsava = new Array();
+    var districtsavanames = new Array();
+    <?php foreach($districts as $key => $district){ ?>
+    districtsava.push('<?php echo $district->name; ?>');
+    <?php } ?>
+
+    <?php foreach($districts as $key => $district){ ?>
+    districtsavanames.push('<?php echo count($district->candidates->where('statu', 'مقبول')); ?>');
+    <?php } ?>
+
+
+    console.log(districtsavanames)
     var bars_basic_element = document.getElementById('bars_basic');
     if (bars_basic_element) {
         var bars_basic = echarts.init(bars_basic_element);
         bars_basic.setOption({
-            color: ['#3398DB'],
+            color: ['#ff6863'],
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -719,18 +719,43 @@
                 }
             },
             grid: {
-                left: '3%',
-                right: '4%',
+                left: '100%',
+                right: '100%',
                 bottom: '3%',
                 containLabel: true
             },
             xAxis: [
                 {
-                    type: 'category',
-                    data: ['ورقلة 1', 'ورقلة 2','ح.مسعود','الرويسات','س-خويلد','النقوسة','البرمة'],
-                    axisTick: {
-                        alignWithLabel: true
-                    }
+
+                    data: [ 'البرمة',
+                        'حاسي مسعود',
+                        'سيدي خويلد',
+                        'انقوسة وما جاورها',
+                        'البور',
+                        'افران',
+                        'القصر العتيق وما جاوره',
+                        'بورالهايشة',
+                        'بامنديل ,حي النصر',
+                        'الرويسات',
+                        'عين البيضاء',
+                        'الشط',
+                        'بني ثور وماجاورها',
+                        'بوغوفالة',
+                        'لاسيليس',
+                        'بوعامر',
+                        'غربوز',
+                        'تازقرارت',
+                        'لاجيين ,الشرفة,سيدي عبد القادر',
+                        'الزياينة',
+                        'سكرة وماجاورها',
+                        'سعيد عتبة',
+                        'الحدب',
+                        'حاسي ميلود ,ام الرانب ,عوينت موسي',
+                        'حاسي بن عبدالله',
+                        'العقلة',
+                        'المخادمة وما جاورها',
+                        'حي 460,حي 700 مسكن',],
+
                 }
             ],
             yAxis: [
@@ -740,19 +765,10 @@
             ],
             series: [
                 {
-                    name: 'Total Products',
+                    name: '',
                     type: 'bar',
-                    barWidth: '20%',
-                    data: [
-                        {{$ouargla1}},
-                        {{$ouargla2}},
-                        {{$hassi}},
-                        {{$rwissat}},
-                        {{$sidi}},
-                        {{$ngossa}},
-                        {{$borma}},
-
-                    ]
+                    barWidth: '10%',
+                    data: districtsavanames
                 }
             ]
         });

@@ -180,13 +180,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <div class="row  d-flex justify-content-start">
                                     <div class="col-sm-4">
+                                        <!-- select -->
                                         <div class="form-group text-right">
                                             <label>مكان الإقامة الحالية</label>
-                                            <input type="text"
-                                                   class="form-control @error('residence') is-invalid @enderror"
-                                                   name="residence"
-                                                   placeholder="الإقامة الحالية">
-                                            @error('residence')
+                                            <select
+                                                class="form-control select2 select2-danger  @error('district_id') is-invalid @enderror"
+                                                data-dropdown-css-class="select2-danger"
+                                                name="district_id" style="width: 100%;">
+                                                @foreach($districts as $district)
+                                                    <option  value="{{$district->id}}">{{$district->name}}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('district_id')
                                             <span class="invalid-feedback">
                                        {{ $message }}
                                     </span>
@@ -278,7 +283,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 data-dropdown-css-class="select2-danger"
                                                 name="feild_id" style="width: 100%;">
                                                 @foreach($feilds as $feild)
-                                                <option  value="{{$feild->id}}">{{$feild->title}}</option>
+                                                    <option  value="{{$feild->id}}">{{$feild->title}}</option>
                                                 @endforeach
                                             </select>
                                             @error('feild_id')

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\CandidateController;
+use App\Http\Controllers\API\DistrictController;
 use App\Http\Controllers\API\FeildController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,4 +25,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResources([
     'candidate' => CandidateController::class,
     'field' => FeildController::class,
+    'district' => DistrictController::class,
 ]);

@@ -37,4 +37,7 @@ class Candidate extends Model
     public function field(){
         return $this->belongsTo(Feild::class,'feild_id');
     }
+    public function district(){
+        return $this->belongsTo(District::class,'district_id');
+    }
 }

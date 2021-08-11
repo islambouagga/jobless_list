@@ -2063,13 +2063,14 @@ __webpack_require__.r(__webpack_exports__);
       candidateslist: null,
       communetest: {},
       candidatetest: {},
+      districttest: {},
       candidate: new Form({
         id: '',
         name: '',
         email: '',
         phone: '',
         birthday: '',
-        residence: '',
+        district_id: '',
         verification_card: '',
         commune: '',
         Electricity_bill: '',
@@ -2097,12 +2098,16 @@ __webpack_require__.r(__webpack_exports__);
         var data = _ref2.data;
         return _this.candidatetest = data;
       });
+      axios.get('api/district/' + candidate.district_id).then(function (_ref3) {
+        var data = _ref3.data;
+        return _this.districttest = data;
+      });
     },
     loadCandidates: function loadCandidates() {
       var _this2 = this;
 
-      axios.get('api/candidate').then(function (_ref3) {
-        var data = _ref3.data;
+      axios.get('api/candidate').then(function (_ref4) {
+        var data = _ref4.data;
         return _this2.candidates = data, console.log(_this2.candidates);
       });
     },
@@ -2135,8 +2140,8 @@ __webpack_require__.r(__webpack_exports__);
 
       var $ageavrage = 0;
       var agelist = [];
-      axios.get('api/candidate').then(function (_ref4) {
-        var data = _ref4.data;
+      axios.get('api/candidate').then(function (_ref5) {
+        var data = _ref5.data;
         return _this3.candidateslist = data, _this3.candidateslist.forEach(function (item) {
           console.log(item);
           var today = new Date();
@@ -37898,7 +37903,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(candidate.birthday))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(candidate.residence))]),
+                        _c("td", [_vm._v(_vm._s(candidate.district.name))]),
                         _vm._v(" "),
                         _c("td", [_vm._v(_vm._s(candidate.Anem))]),
                         _vm._v(" "),
@@ -38259,7 +38264,7 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-6" }, [
+                        _c("div", { staticClass: "col" }, [
                           _c(
                             "label",
                             {
@@ -38285,11 +38290,11 @@ var render = function() {
                                 "data-success": "right"
                               }
                             },
-                            [_vm._v(_vm._s(_vm.candidate.residence))]
+                            [_vm._v(_vm._s(_vm.districttest.name))]
                           )
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-md-6" }, [
+                        _c("div", { staticClass: "col" }, [
                           _c(
                             "label",
                             {

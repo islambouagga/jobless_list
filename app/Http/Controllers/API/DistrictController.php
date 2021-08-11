@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Candidate;
-use Carbon\Carbon;
+use App\Models\District;
 use Illuminate\Http\Request;
 
-class CandidateController extends Controller
+class DistrictController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class CandidateController extends Controller
      */
     public function index()
     {
-        return Candidate::with('field')->with('district')->get();
+        return District::all();
     }
 
     /**
@@ -36,9 +35,9 @@ class CandidateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Candidate $candidate)
+    public function show(District $district)
     {
-        //
+        return $district;
     }
 
     /**
@@ -48,17 +47,9 @@ class CandidateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Candidate $candidate)
+    public function update(Request $request, $id)
     {
-//        $request->date_of_birth = "2000-10-25";
-//        $age = Carbon::parse($request->birthday)->diff(Carbon::now())->y;
-//
-//        dd($age. " Years"); // To check result
-
-
-        $candidate->statu =  $request->statu;
-        $candidate->save();
-        return $candidate;
+        //
     }
 
     /**
@@ -67,7 +58,7 @@ class CandidateController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Candidate $candidate)
+    public function destroy($id)
     {
         //
     }
