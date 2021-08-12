@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\CandidateController;
 use App\Http\Controllers\API\DistrictController;
 use App\Http\Controllers\API\FeildController;
+use App\Http\Controllers\API\VolunteerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,5 @@ Route::apiResources([
     'candidate' => CandidateController::class,
     'field' => FeildController::class,
     'district' => DistrictController::class,
+    'volunteer' => VolunteerController::class,
 ]);

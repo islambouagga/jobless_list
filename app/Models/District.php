@@ -13,4 +13,8 @@ class District extends Model
     public function candidates(){
         return $this->hasMany(Candidate::class,'district_id');
     }
+
+    public function volunteers(){
+        return$this->hasMany(Volunteer::class);
+    }
 }

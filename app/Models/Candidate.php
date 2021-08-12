@@ -21,7 +21,7 @@ class Candidate extends Model
         'email',
         'phone',
         'birthday',
-        'residence',
+        'district_id',
         'verification_card',
         'commune',
         'Electricity_bill',
@@ -39,5 +39,8 @@ class Candidate extends Model
     }
     public function district(){
         return $this->belongsTo(District::class,'district_id');
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

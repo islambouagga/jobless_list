@@ -120,9 +120,15 @@
                 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                     <li><a style="color: black" href="/Candidate">قائمة المسجلين</a></li>
                 </ul>
+                @can('isAdmin')
+                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li><a style="color: black" href="/Volunteer">قائمة المنسقين</a></li>
+                </ul>
+
                 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                     <li><a style="color: black" href="{{route('statistics')}}" >احصائيات</a></li>
                 </ul>
+                @endcan
             </div><!-- /.navbar-collapse -->
         </div>
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Laravel\Passport\HasApiTokens;
 
 
 Relation::morphMap([
@@ -17,7 +17,7 @@ Relation::morphMap([
 ]);
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -27,6 +27,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone',
         'password',
         'usertable_type',
         'usertable_id',
@@ -54,6 +55,10 @@ class User extends Authenticatable
 
     public function usertable(){
         return $this->morphTo();
+    }
+
+    public function candidates(){
+        return $this->hasMany(Candidate::class);
     }
 
 }

@@ -19,6 +19,8 @@ class CreateCandidatesTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->date('birthday');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('district_id')->nullable();
             $table->foreign('district_id')->references('id')->on('districts');
             $table->string('sexe');

@@ -267,37 +267,6 @@ export default {
 
             return photo;
         },
-        calculateAgeavverage() {
-            let $ageavrage = 0;
-            let agelist = [];
-
-
-            axios.get('api/candidate').then(({data}) => (this.candidateslist = data,
-                    this.candidateslist.forEach(function (item) {
-                        console.log(item)
-                        var today = new Date();
-                        var birthDate = new Date(item.birthday);
-                        var age = today.getFullYear() - birthDate.getFullYear();
-                        var m = today.getMonth() - birthDate.getMonth();
-                        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-                            age--;
-                        }
-                        agelist.push(age);
-
-                    }),
-                    agelist.forEach(function (item) {
-                        console.log("age")
-                        console.log(item)
-                        $ageavrage = $ageavrage + item
-                        console.log('$ageavrage')
-                        console.log($ageavrage)
-                    }),
-                    console.log('$ageavrage'),
-                    console.log($ageavrage),
-                    this.ageAvvrage = $ageavrage / agelist.length
-            ));
-
-        },
     },
     created() {
         this.loadCandidates();

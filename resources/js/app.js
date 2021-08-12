@@ -16,9 +16,11 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import Candidate from "./components/Candidate";
+import Volunteer from "./components/Volunteer";
 
 let routes = [
     { path: '/Candidate', component: Candidate },
+    { path: '/Volunteer', component: Volunteer },
 ]
 
 const router = new VueRouter({
